@@ -32,7 +32,7 @@ However, for now, you'll have to clone the repo, install the dependency using [C
 ```bash
 $ gem install cocoapods # if it isn't already installed
 $ git clone https://github.com/DCMaxxx/LiFX-Widget.git
-$ cd LiFX-Widget
+$ cd LiFX-Widget/project
 $ pod install
 $ open "LiFX Widget.xcworkspace"
 ```
@@ -40,8 +40,7 @@ $ open "LiFX Widget.xcworkspace"
 To enable data communication (displayed lights / colors) between the companion and the widget, you'll need to setup an App group. To do so, see [App extension programming guide](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensibilityPG.pdf, "App extension programming guide"), page 22. Name it `group.LiFXWidgetSharingDefaults`.
 **I'm having trouble with it though. See issues below**.
 
-Then, build and run the `LiFXWidget` scheme, followed by the `LiFXWidgetExtension` one.
-
+Then, build and run the `LiFX Widget Companion` scheme, followed by the `LiFX Widget` one.
 
 To-Do
 -----------
@@ -66,4 +65,7 @@ The most important issue is that for now, **sharing data between the companion a
 **Long story:** For some reason, when I archive my custom classes in the shared `NSUserDefaults` from the companion app, I can't unarchive it from the widget (and vice-versa), `NSKeyedUnarchiver.unarchiveObjectWithData()` crashes - the `NSData` is there, the keyed unarchiver just doesn't seem to understand it. Archiving and unarchiving in the same app work though... I don't know if I do it wrong, or if it's a beta-related issue, and I didn't have enough time to look into it yet.
 `initHardCoded{Lights,Colours}()` archives your custom lights and colors when you run either app, so the later calls to `NSKeyUnarchiver.unarchiveObjectWithData()` will be able to unarchive the data - since it has been archived on app launch.
 
-Have fun !
+Also, debugging extension is a freaking pain in the ass. Sometimes, changes won't be applied when you build and run it. Sometimes, the widget's height is 0. Sometimes, the widget is removed and you'll need to add it again.
+When I get these issues I remove the app from my device or reset simulators, run the companion scheme then the widget scheme. It *usually* works.
+
+Have fun 😄 !
