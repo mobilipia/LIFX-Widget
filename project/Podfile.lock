@@ -1,0 +1,17 @@
+PODS:
+  - CocoaLumberjack (1.9.1):
+    - CocoaLumberjack/Extensions
+  - CocoaLumberjack/Core (1.9.1)
+  - CocoaLumberjack/Extensions (1.9.1):
+    - CocoaLumberjack/Core
+  - LIFXKit (0.5.0):
+    - CocoaLumberjack (~> 1.6)
+
+DEPENDENCIES:
+  - LIFXKit
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: 94accd5749f5c5d15134c8d50f34a973aed8ef69
+  LIFXKit: 4280129f60f1b93a631b0ecaf13432bb77b15fc8
+
+COCOAPODS: 0.33.1

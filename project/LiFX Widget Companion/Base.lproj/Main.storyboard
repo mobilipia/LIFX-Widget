@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9DV-dr-2OO">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="aFi-Jm-7G6">
+            <objects>
+                <navigationController id="9DV-dr-2OO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dJ3-Yc-Wk4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="I5a-X1-3ax" kind="relationship" relationship="rootViewController" id="lYG-1v-MHt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fck-vo-jIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-633" y="451"/>
+        </scene>
+        <!--Configuration-->
+        <scene sceneID="w1y-63-Fzu">
+            <objects>
+                <tableViewController title="Configuration" id="I5a-X1-3ax" customClass="MainTableViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kOc-Xh-v5X">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="dII-O8-mT3">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="gfq-bz-2Ys" style="IBUITableViewCellStyleDefault" id="JOk-it-7Us">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JOk-it-7Us" id="cGa-ZF-FBF">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lights" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gfq-bz-2Ys">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="vmH-PE-SKQ" kind="show" id="SPQ-dP-eyH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="AmV-2R-1Ns" style="IBUITableViewCellStyleDefault" id="z0g-03-Y3u">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z0g-03-Y3u" id="F3Z-5z-gfB">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Colours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AmV-2R-1Ns">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="W1u-cc-oNL" kind="show" id="i01-VM-iDC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="I5a-X1-3ax" id="viA-pj-IYv"/>
+                            <outlet property="delegate" destination="I5a-X1-3ax" id="ljp-M4-LRD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="LiFX Widget Companion" id="yKs-os-lpM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tBe-ZP-UYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="63" y="451"/>
+        </scene>
+        <!--LiFX Lights-->
+        <scene sceneID="N1T-AU-6yP">
+            <objects>
+                <tableViewController id="EWp-JX-Rt8" customClass="LifxLightsTableViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xNl-Ne-WiI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LIFXLightTableViewCell" textLabel="fP0-9b-zqn" style="IBUITableViewCellStyleDefault" id="Ac9-Qe-9n6">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ac9-Qe-9n6" id="Xtc-PX-fPL">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fP0-9b-zqn">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EWp-JX-Rt8" id="7mH-n8-AWN"/>
+                            <outlet property="delegate" destination="EWp-JX-Rt8" id="ITy-Of-K4D"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="LiFX Lights" id="1pb-K7-P15"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qXB-H2-LoH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807" y="-231"/>
+        </scene>
+        <!--Lights-->
+        <scene sceneID="czJ-gB-5MP">
+            <objects>
+                <tableViewController title="Lights" id="vmH-PE-SKQ" customClass="LightsTableViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jdu-g7-7OQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LightTableViewCell" textLabel="h5v-2s-s7Q" style="IBUITableViewCellStyleDefault" id="a47-06-bUe">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a47-06-bUe" id="0S5-1M-8hZ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h5v-2s-s7Q">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="cRE-6w-vJO" kind="show" identifier="LightViewControllerSegue" id="WGk-0b-nhB"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vmH-PE-SKQ" id="qzp-S2-CPF"/>
+                            <outlet property="delegate" destination="vmH-PE-SKQ" id="Kd5-XR-vAx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Widget lights" id="p9m-yV-6zL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Hl7-dF-aR9">
+                            <connections>
+                                <segue destination="EWp-JX-Rt8" kind="show" identifier="LifxLightViewControllerSegue" id="z5X-Xc-6Yn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vQT-dd-LSD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807" y="451"/>
+        </scene>
+        <!--Some light-->
+        <scene sceneID="Tjf-oo-FTQ">
+            <objects>
+                <viewController id="cRE-6w-vJO" customClass="LightViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MNM-hB-ARo"/>
+                        <viewControllerLayoutGuide type="bottom" id="GOx-Cf-mtJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gQk-Gg-wTj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Light nickname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lFH-Dw-BWY">
+                                <rect key="frame" x="20" y="84" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LX3-vB-B8t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="560" translatesAutoresizingMaskIntoConstraints="NO" id="6uf-cE-5eh">
+                                <rect key="frame" x="20" y="134" width="560" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="PTw-Me-vrt"/>
+                                </constraints>
+                                <string key="text">A light can be nicknamed.
+
+Since widgets are displayed in a small area, you might want to shorten the name displayed in the widget - using initials, for example.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lFH-Dw-BWY" firstAttribute="leading" secondItem="gQk-Gg-wTj" secondAttribute="leading" constant="20" id="4aA-3Y-2EH"/>
+                            <constraint firstAttribute="trailing" secondItem="lFH-Dw-BWY" secondAttribute="trailing" constant="20" id="5yE-GS-oVU"/>
+                            <constraint firstItem="6uf-cE-5eh" firstAttribute="leading" secondItem="gQk-Gg-wTj" secondAttribute="leading" constant="20" id="A1X-dY-hj3"/>
+                            <constraint firstAttribute="trailing" secondItem="6uf-cE-5eh" secondAttribute="trailing" constant="20" id="QZP-mc-nbo"/>
+                            <constraint firstItem="6uf-cE-5eh" firstAttribute="top" secondItem="lFH-Dw-BWY" secondAttribute="bottom" constant="20" id="azC-tk-ZHa"/>
+                            <constraint firstItem="lFH-Dw-BWY" firstAttribute="top" secondItem="MNM-hB-ARo" secondAttribute="bottom" constant="20" id="pgb-BN-vPS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Some light" id="53F-pO-fev">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="txf-ql-Gkh">
+                            <connections>
+                                <action selector="pressedDoneButton:" destination="cRE-6w-vJO" id="gDk-bX-hgC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="lFH-Dw-BWY" id="AfR-lI-SkE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kBM-pA-HhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1499" y="451"/>
+        </scene>
+        <!--Colours-->
+        <scene sceneID="NhI-cu-2pd">
+            <objects>
+                <tableViewController id="W1u-cc-oNL" customClass="ColoursTableViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="22" sectionFooterHeight="22" id="ODI-Zh-tTl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ColourTableViewCellIdentifier" rowHeight="95" id="iVm-82-DoQ">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iVm-82-DoQ" id="e3u-oA-oAl">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="yOY-J2-I8M" kind="show" identifier="ColourViewControllerSegue" id="Gc3-w3-iXg"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="W1u-cc-oNL" id="fw8-9H-WaQ"/>
+                            <outlet property="delegate" destination="W1u-cc-oNL" id="JFX-eQ-TgJ"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Colours" id="m5O-Ra-uD9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pSj-te-qAh">
+                            <connections>
+                                <segue destination="yOY-J2-I8M" kind="show" identifier="NewColourViewControllerSegue" id="StS-m9-lIo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ykR-oX-qD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807" y="1211"/>
+        </scene>
+        <!--Some colour-->
+        <scene sceneID="hvy-kN-jbm">
+            <objects>
+                <viewController id="yOY-J2-I8M" customClass="ColourViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2vr-G0-tIx"/>
+                        <viewControllerLayoutGuide type="bottom" id="re8-nO-XuB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ugb-CK-leS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To do :D" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzt-M1-rKC">
+                                <rect key="frame" x="268" y="289" width="65" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Wzt-M1-rKC" secondAttribute="centerY" constant="0.5" id="35X-6d-94D"/>
+                            <constraint firstAttribute="centerX" secondItem="Wzt-M1-rKC" secondAttribute="centerX" constant="-0.5" id="WQF-AM-t9C"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Some colour" id="5g0-Ce-kiY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jgi-Nh-FtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1489" y="1211"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="StS-m9-lIo"/>
+    </inferredMetricsTieBreakers>
+</document>

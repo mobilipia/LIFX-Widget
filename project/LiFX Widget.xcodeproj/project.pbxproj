@@ -1,0 +1,704 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		402987FCEC69483F92638218 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E19E2736E044AD91654AFC /* libPods.a */; };
+		6D5BF72EAE4C4821A9F26E91 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E19E2736E044AD91654AFC /* libPods.a */; };
+		9C0A2DCD197F9ADE00D94B5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A2DCC197F9ADE00D94B5F /* AppDelegate.swift */; };
+		9C0A2DCF197F9ADE00D94B5F /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A2DCE197F9ADE00D94B5F /* MainTableViewController.swift */; };
+		9C0A2DD2197F9ADE00D94B5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0A2DD0197F9ADE00D94B5F /* Main.storyboard */; };
+		9C0A2DD4197F9ADE00D94B5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C0A2DD3197F9ADE00D94B5F /* Images.xcassets */; };
+		9C0A2DF0197F9BA200D94B5F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0A2DEF197F9BA200D94B5F /* NotificationCenter.framework */; };
+		9C0A2DF5197F9BA200D94B5F /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A2DF4197F9BA200D94B5F /* ExtensionViewController.swift */; };
+		9C0A2DF7197F9BA200D94B5F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0A2DF6197F9BA200D94B5F /* MainInterface.storyboard */; };
+		9C0A2DFA197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C0A2DED197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex */; };
+		9C1CC8B2198978EF00465CFE /* LightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CC8B1198978EF00465CFE /* LightCollectionViewCell.swift */; };
+		9C1CC8B4198995D300465CFE /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CC8B3198995D300465CFE /* Light.swift */; };
+		9C3CF449198FE4FA00BE6E3C /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CF448198FE4FA00BE6E3C /* ArrayExtension.swift */; };
+		9C4E2F30198EBC87009175BE /* CircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4E2F2F198EBC87009175BE /* CircleCollectionViewCell.swift */; };
+		9C50630C199408E000D21C2B /* LFXKSBKColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630B199408E000D21C2B /* LFXKSBKColorExtension.swift */; };
+		9C50630D1994255E00D21C2B /* LFXKSBKColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630B199408E000D21C2B /* LFXKSBKColorExtension.swift */; };
+		9C50630F1994E3F100D21C2B /* SettingsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630E1994E3F100D21C2B /* SettingsPersistanceManager.swift */; };
+		9C5063141994E80A00D21C2B /* SettingsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630E1994E3F100D21C2B /* SettingsPersistanceManager.swift */; };
+		9C77C886198FEAC200EC55B9 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CF448198FE4FA00BE6E3C /* ArrayExtension.swift */; };
+		9C780E10198ECCA300FA4826 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CC8B3198995D300465CFE /* Light.swift */; };
+		9C780E15198ECD3400FA4826 /* LightsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C780E14198ECD3400FA4826 /* LightsTableViewController.swift */; };
+		9C780E17198ECD4900FA4826 /* ColoursTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C780E16198ECD4900FA4826 /* ColoursTableViewController.swift */; };
+		9C780E19198ECD5300FA4826 /* LightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C780E18198ECD5300FA4826 /* LightViewController.swift */; };
+		9C780E1B198ECD6300FA4826 /* ColourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C780E1A198ECD6300FA4826 /* ColourViewController.swift */; };
+		9C780E1D198ED23000FA4826 /* LifxLightsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C780E1C198ED23000FA4826 /* LifxLightsTableViewController.swift */; };
+		9C948C0619881CD40098E0BA /* ColourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C948C0519881CD40098E0BA /* ColourCollectionViewCell.swift */; };
+		9CCA9ABD1993E8740059635F /* LFXLightExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA9ABC1993E8740059635F /* LFXLightExtension.swift */; };
+		9CCA9ABE1993E8DF0059635F /* LFXLightExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA9ABC1993E8740059635F /* LFXLightExtension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C0A2DF8197F9BA200D94B5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C0A2DBF197F9ADE00D94B5F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C0A2DEC197F9BA200D94B5F;
+			remoteInfo = LiFXWidgetExtension;
+		};
+		9C0A2DFB197F9BA200D94B5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C0A2DBF197F9ADE00D94B5F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C0A2DEC197F9BA200D94B5F;
+			remoteInfo = LiFXWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9C0A2E00197F9BA200D94B5F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9C0A2DFA197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		55B121D662B94DA1BC7712D0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		9C0A2DC7197F9ADE00D94B5F /* LiFX Widget Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LiFX Widget Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C0A2DCB197F9ADE00D94B5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C0A2DCC197F9ADE00D94B5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9C0A2DCE197F9ADE00D94B5F /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		9C0A2DD1197F9ADE00D94B5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9C0A2DD3197F9ADE00D94B5F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9C0A2DED197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C0A2DEF197F9BA200D94B5F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		9C0A2DF3197F9BA200D94B5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C0A2DF4197F9BA200D94B5F /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
+		9C0A2DF6197F9BA200D94B5F /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		9C1CC8B1198978EF00465CFE /* LightCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightCollectionViewCell.swift; sourceTree = "<group>"; };
+		9C1CC8B3198995D300465CFE /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		9C2F54BF1995788A0027A6A1 /* LiFX Widget Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion.entitlements"; sourceTree = "<group>"; };
+		9C2F54C01995788E0027A6A1 /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements"; sourceTree = "<group>"; };
+		9C3CF448198FE4FA00BE6E3C /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		9C4E2F2F198EBC87009175BE /* CircleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewCell.swift; sourceTree = "<group>"; };
+		9C50630B199408E000D21C2B /* LFXKSBKColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFXKSBKColorExtension.swift; sourceTree = "<group>"; };
+		9C50630E1994E3F100D21C2B /* SettingsPersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPersistanceManager.swift; sourceTree = "<group>"; };
+		9C780E14198ECD3400FA4826 /* LightsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsTableViewController.swift; sourceTree = "<group>"; };
+		9C780E16198ECD4900FA4826 /* ColoursTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoursTableViewController.swift; sourceTree = "<group>"; };
+		9C780E18198ECD5300FA4826 /* LightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightViewController.swift; sourceTree = "<group>"; };
+		9C780E1A198ECD6300FA4826 /* ColourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourViewController.swift; sourceTree = "<group>"; };
+		9C780E1C198ED23000FA4826 /* LifxLightsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifxLightsTableViewController.swift; sourceTree = "<group>"; };
+		9C7E72AF197FBB5F00BFC0E7 /* LiFXWidget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LiFXWidget-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C948C0519881CD40098E0BA /* ColourCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourCollectionViewCell.swift; sourceTree = "<group>"; };
+		9CCA9ABC1993E8740059635F /* LFXLightExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFXLightExtension.swift; sourceTree = "<group>"; };
+		C2E19E2736E044AD91654AFC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C0A2DC4197F9ADE00D94B5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				402987FCEC69483F92638218 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C0A2DEA197F9BA200D94B5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C0A2DF0197F9BA200D94B5F /* NotificationCenter.framework in Frameworks */,
+				6D5BF72EAE4C4821A9F26E91 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C0A2DBE197F9ADE00D94B5F = {
+			isa = PBXGroup;
+			children = (
+				9C0A2DC9197F9ADE00D94B5F /* LiFX Widget Companion */,
+				9C0A2DF1197F9BA200D94B5F /* LiFX Widget */,
+				9C780E11198ECCAD00FA4826 /* Common */,
+				9C0A2DEE197F9BA200D94B5F /* Frameworks */,
+				9C0A2DC8197F9ADE00D94B5F /* Products */,
+				55B121D662B94DA1BC7712D0 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		9C0A2DC8197F9ADE00D94B5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C0A2DC7197F9ADE00D94B5F /* LiFX Widget Companion.app */,
+				9C0A2DED197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C0A2DC9197F9ADE00D94B5F /* LiFX Widget Companion */ = {
+			isa = PBXGroup;
+			children = (
+				9C2F54BF1995788A0027A6A1 /* LiFX Widget Companion.entitlements */,
+				9C780E0E198ECC8F00FA4826 /* ViewControllers */,
+				9C780E12198ECCCB00FA4826 /* Other sources */,
+				9C0A2DD0197F9ADE00D94B5F /* Main.storyboard */,
+				9C780E13198ECCDA00FA4826 /* Resources */,
+				9C0A2DCA197F9ADE00D94B5F /* Supporting Files */,
+			);
+			path = "LiFX Widget Companion";
+			sourceTree = "<group>";
+		};
+		9C0A2DCA197F9ADE00D94B5F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C0A2DCB197F9ADE00D94B5F /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C0A2DEE197F9BA200D94B5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C0A2DEF197F9BA200D94B5F /* NotificationCenter.framework */,
+				C2E19E2736E044AD91654AFC /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C0A2DF1197F9BA200D94B5F /* LiFX Widget */ = {
+			isa = PBXGroup;
+			children = (
+				9C2F54C01995788E0027A6A1 /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements */,
+				9C4E2F33198EBFD8009175BE /* ViewControllers */,
+				9C4E2F31198EBFC2009175BE /* Views */,
+				9C0A2DF6197F9BA200D94B5F /* MainInterface.storyboard */,
+				9C0A2DF2197F9BA200D94B5F /* Supporting Files */,
+			);
+			path = "LiFX Widget";
+			sourceTree = "<group>";
+		};
+		9C0A2DF2197F9BA200D94B5F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C0A2DF3197F9BA200D94B5F /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C4E2F31198EBFC2009175BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C4E2F2F198EBC87009175BE /* CircleCollectionViewCell.swift */,
+				9C1CC8B1198978EF00465CFE /* LightCollectionViewCell.swift */,
+				9C948C0519881CD40098E0BA /* ColourCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9C4E2F33198EBFD8009175BE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9C0A2DF4197F9BA200D94B5F /* ExtensionViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9C5063101994E66800D21C2B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9C3CF448198FE4FA00BE6E3C /* ArrayExtension.swift */,
+				9CCA9ABC1993E8740059635F /* LFXLightExtension.swift */,
+				9C50630B199408E000D21C2B /* LFXKSBKColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9C5063121994E78700D21C2B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CC8B3198995D300465CFE /* Light.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9C5063131994E79200D21C2B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9C50630E1994E3F100D21C2B /* SettingsPersistanceManager.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9C780E0E198ECC8F00FA4826 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9C0A2DCE197F9ADE00D94B5F /* MainTableViewController.swift */,
+				9C780E14198ECD3400FA4826 /* LightsTableViewController.swift */,
+				9C780E1C198ED23000FA4826 /* LifxLightsTableViewController.swift */,
+				9C780E18198ECD5300FA4826 /* LightViewController.swift */,
+				9C780E16198ECD4900FA4826 /* ColoursTableViewController.swift */,
+				9C780E1A198ECD6300FA4826 /* ColourViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9C780E11198ECCAD00FA4826 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9C7E72AF197FBB5F00BFC0E7 /* LiFXWidget-Bridging-Header.h */,
+				9C5063101994E66800D21C2B /* Extensions */,
+				9C5063121994E78700D21C2B /* Models */,
+				9C5063131994E79200D21C2B /* Controllers */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9C780E12198ECCCB00FA4826 /* Other sources */ = {
+			isa = PBXGroup;
+			children = (
+				9C0A2DCC197F9ADE00D94B5F /* AppDelegate.swift */,
+			);
+			path = "Other sources";
+			sourceTree = "<group>";
+		};
+		9C780E13198ECCDA00FA4826 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C0A2DD3197F9ADE00D94B5F /* Images.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C0A2DC6197F9ADE00D94B5F /* LiFX Widget Companion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C0A2DE3197F9ADE00D94B5F /* Build configuration list for PBXNativeTarget "LiFX Widget Companion" */;
+			buildPhases = (
+				72032E4C2AE0444E8F5ECEF1 /* Check Pods Manifest.lock */,
+				9C0A2DC3197F9ADE00D94B5F /* Sources */,
+				9C0A2DC4197F9ADE00D94B5F /* Frameworks */,
+				9C0A2DC5197F9ADE00D94B5F /* Resources */,
+				9C0A2E00197F9BA200D94B5F /* Embed App Extensions */,
+				533B7214A71F42A78DC8FE68 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C0A2DF9197F9BA200D94B5F /* PBXTargetDependency */,
+				9C0A2DFC197F9BA200D94B5F /* PBXTargetDependency */,
+			);
+			name = "LiFX Widget Companion";
+			productName = LiFXWidget;
+			productReference = 9C0A2DC7197F9ADE00D94B5F /* LiFX Widget Companion.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C0A2DEC197F9BA200D94B5F /* LiFX Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C0A2DFD197F9BA200D94B5F /* Build configuration list for PBXNativeTarget "LiFX Widget" */;
+			buildPhases = (
+				25811F87FD734FCCB3BB52B9 /* Check Pods Manifest.lock */,
+				9C0A2DE9197F9BA200D94B5F /* Sources */,
+				9C0A2DEA197F9BA200D94B5F /* Frameworks */,
+				9C0A2DEB197F9BA200D94B5F /* Resources */,
+				457BE06F6565409CB4866770 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LiFX Widget";
+			productName = LiFXWidgetExtension;
+			productReference = 9C0A2DED197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C0A2DBF197F9ADE00D94B5F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Maxime de Chalendar";
+				TargetAttributes = {
+					9C0A2DC6197F9ADE00D94B5F = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 8DGT2SD8VC;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					9C0A2DEC197F9BA200D94B5F = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 8DGT2SD8VC;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 9C0A2DC2197F9ADE00D94B5F /* Build configuration list for PBXProject "LiFX Widget" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9C0A2DBE197F9ADE00D94B5F;
+			productRefGroup = 9C0A2DC8197F9ADE00D94B5F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C0A2DC6197F9ADE00D94B5F /* LiFX Widget Companion */,
+				9C0A2DEC197F9BA200D94B5F /* LiFX Widget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C0A2DC5197F9ADE00D94B5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C0A2DD2197F9ADE00D94B5F /* Main.storyboard in Resources */,
+				9C0A2DD4197F9ADE00D94B5F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C0A2DEB197F9BA200D94B5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C0A2DF7197F9BA200D94B5F /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25811F87FD734FCCB3BB52B9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		457BE06F6565409CB4866770 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		533B7214A71F42A78DC8FE68 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72032E4C2AE0444E8F5ECEF1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C0A2DC3197F9ADE00D94B5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C780E17198ECD4900FA4826 /* ColoursTableViewController.swift in Sources */,
+				9C780E19198ECD5300FA4826 /* LightViewController.swift in Sources */,
+				9C780E15198ECD3400FA4826 /* LightsTableViewController.swift in Sources */,
+				9C780E1D198ED23000FA4826 /* LifxLightsTableViewController.swift in Sources */,
+				9C780E10198ECCA300FA4826 /* Light.swift in Sources */,
+				9C50630F1994E3F100D21C2B /* SettingsPersistanceManager.swift in Sources */,
+				9C3CF449198FE4FA00BE6E3C /* ArrayExtension.swift in Sources */,
+				9C780E1B198ECD6300FA4826 /* ColourViewController.swift in Sources */,
+				9C0A2DCF197F9ADE00D94B5F /* MainTableViewController.swift in Sources */,
+				9C0A2DCD197F9ADE00D94B5F /* AppDelegate.swift in Sources */,
+				9CCA9ABD1993E8740059635F /* LFXLightExtension.swift in Sources */,
+				9C50630C199408E000D21C2B /* LFXKSBKColorExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C0A2DE9197F9BA200D94B5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C5063141994E80A00D21C2B /* SettingsPersistanceManager.swift in Sources */,
+				9C948C0619881CD40098E0BA /* ColourCollectionViewCell.swift in Sources */,
+				9CCA9ABE1993E8DF0059635F /* LFXLightExtension.swift in Sources */,
+				9C50630D1994255E00D21C2B /* LFXKSBKColorExtension.swift in Sources */,
+				9C4E2F30198EBC87009175BE /* CircleCollectionViewCell.swift in Sources */,
+				9C0A2DF5197F9BA200D94B5F /* ExtensionViewController.swift in Sources */,
+				9C1CC8B4198995D300465CFE /* Light.swift in Sources */,
+				9C77C886198FEAC200EC55B9 /* ArrayExtension.swift in Sources */,
+				9C1CC8B2198978EF00465CFE /* LightCollectionViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C0A2DF9197F9BA200D94B5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C0A2DEC197F9BA200D94B5F /* LiFX Widget */;
+			targetProxy = 9C0A2DF8197F9BA200D94B5F /* PBXContainerItemProxy */;
+		};
+		9C0A2DFC197F9BA200D94B5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C0A2DEC197F9BA200D94B5F /* LiFX Widget */;
+			targetProxy = 9C0A2DFB197F9BA200D94B5F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9C0A2DD0197F9ADE00D94B5F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C0A2DD1197F9ADE00D94B5F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C0A2DE1197F9ADE00D94B5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Common/LiFXWidget-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9C0A2DE2197F9ADE00D94B5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Common/LiFXWidget-Bridging-Header.h";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C0A2DE4197F9ADE00D94B5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55B121D662B94DA1BC7712D0 /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "LiFX Widget Companion/LiFX Widget Companion.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "LiFX Widget Companion/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9C0A2DE5197F9ADE00D94B5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55B121D662B94DA1BC7712D0 /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "LiFX Widget Companion/LiFX Widget Companion.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "LiFX Widget Companion/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		9C0A2DFE197F9BA200D94B5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55B121D662B94DA1BC7712D0 /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_ENTITLEMENTS = "LiFX Widget/com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LiFX Widget/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "com.maxime-dechalendar.LiFXWidget.$(TARGET_NAME:rfc1034identifier)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9C0A2DFF197F9BA200D94B5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55B121D662B94DA1BC7712D0 /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_ENTITLEMENTS = "LiFX Widget/com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "LiFX Widget/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "com.maxime-dechalendar.LiFXWidget.$(TARGET_NAME:rfc1034identifier)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C0A2DC2197F9ADE00D94B5F /* Build configuration list for PBXProject "LiFX Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C0A2DE1197F9ADE00D94B5F /* Debug */,
+				9C0A2DE2197F9ADE00D94B5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C0A2DE3197F9ADE00D94B5F /* Build configuration list for PBXNativeTarget "LiFX Widget Companion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C0A2DE4197F9ADE00D94B5F /* Debug */,
+				9C0A2DE5197F9ADE00D94B5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C0A2DFD197F9BA200D94B5F /* Build configuration list for PBXNativeTarget "LiFX Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C0A2DFE197F9BA200D94B5F /* Debug */,
+				9C0A2DFF197F9BA200D94B5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C0A2DBF197F9ADE00D94B5F /* Project object */;
+}
