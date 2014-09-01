@@ -12,7 +12,7 @@ Screenshots
 
 Widget
 -----------
-Simply press your light name, then pick a color. Toogle the selected light using the bottom switch.
+Simply press your light name, then pick a colour. Toogle the selected light using the bottom switch.
 
 A greyed out light name means that it couldn't be found on the network.
 If the widget can't detect your light, make sure you're on the same wireless network and the light bulb isn't eletrically switched off.
@@ -37,7 +37,7 @@ $ pod install
 $ open "LiFX Widget.xcworkspace"
 ```
 
-To enable data communication (displayed lights / colors) between the companion and the widget, you'll need to setup an App group. To do so, see [App extension programming guide](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensibilityPG.pdf, "App extension programming guide"), page 22. Name it `group.LiFXWidgetSharingDefaults`.
+To enable data communication (displayed lights / colours) between the companion and the widget, you'll need to setup an App group. To do so, see [App extension programming guide](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensibilityPG.pdf, "App extension programming guide"), page 22. Name it `group.LiFXWidgetSharingDefaults`.
 **I'm having trouble with it though. See issues below**.
 
 Then, build and run the `LiFX Widget Companion` scheme, followed by the `LiFX Widget` one.
@@ -45,13 +45,13 @@ Then, build and run the `LiFX Widget Companion` scheme, followed by the `LiFX Wi
 To-Do
 -----------
 Here's a completly unordered todo list of the upcoming features (or at least things I'd like to do). PR welcome ❤️.
-- Implement the color picker in the companion app,
+- Implement the colour picker in the companion app,
 - Test the LiFX bulbs picker in the companion app - Pretty sure it's not working correctly,
 - Better UI in the companion app,
-- Allow the widget to display scenes instead of bulbs and colors, configurable via the companion app,
-- Adapt the size of the widget depending on the number of lights / colors,
+- Allow the widget to display scenes instead of bulbs and colours, configurable via the companion app,
+- Adapt the size of the widget depending on the number of lights / colours,
 - Update the widget view in the background using the `NCWidgetProviding` protocol,
-- Display a custom view in the widget when no lights / colors are configured in the companion app, 
+- Display a custom view in the widget when no lights / colours are configured in the companion app, 
 - Hide the widget on cellular data (*I'm pretty sure I read somewhere I can do this*),
 - Implement [some more awesomeness](https://github.com/chrismiles/ProximityLight, "Chris Miles' ProximityLight").
 
@@ -59,12 +59,12 @@ Known issues & other stuff
 -----------
 You'll see a few `FIXME` here and there in the code. These are working stuff that I don't like. I won't be working on it for a couple of weeks, and I've been asked to put the repo on GitHub, so here it is.
 
-The most important issue is that for now, **sharing data between the companion app and the widget doesn't work**. ie: the configuration of displayed lights and colors.
+The most important issue is that for now, **sharing data between the companion app and the widget doesn't work**. ie: the configuration of displayed lights and colours.
 
-**Short story:** You'll need to hardcode a list of colors and lights in `SettingsPersistanceManager.swift`, `initHardCodedLights()` and `initHardCodedColours()`. The modifications made in the companion app will be reset upon launch.
+**Short story:** You'll need to hardcode a list of colours and lights in `SettingsPersistanceManager.swift`, `initHardCodedLights()` and `initHardCodedColours()`. The modifications made in the companion app will be reset upon launch.
 
 **Long story:** For some reason, when I archive my custom classes in the shared `NSUserDefaults` from the companion app, I can't unarchive it from the widget (and vice-versa), `NSKeyedUnarchiver.unarchiveObjectWithData()` crashes - the `NSData` is there, the keyed unarchiver just doesn't seem to understand it. Archiving and unarchiving in the same app work though... I don't know if I do it wrong, or if it's a beta-related issue, and I didn't have enough time to look into it yet.
-`initHardCoded{Lights,Colours}()` archives your custom lights and colors when you run either app, so the later calls to `NSKeyUnarchiver.unarchiveObjectWithData()` will be able to unarchive the data - since it has been archived on app launch.
+`initHardCoded{Lights,Colours}()` archives your custom lights and colours when you run either app, so the later calls to `NSKeyUnarchiver.unarchiveObjectWithData()` will be able to unarchive the data - since it has been archived on app launch.
 
 Also, debugging extension is a freaking pain in the ass. Sometimes, changes won't be applied when you build and run it. Sometimes, the widget's height is 0. Sometimes, the widget is removed and you'll need to add it again.
 When I get these issues I remove the app from my device or reset simulators, run the companion scheme then the widget scheme. It *usually* works.
