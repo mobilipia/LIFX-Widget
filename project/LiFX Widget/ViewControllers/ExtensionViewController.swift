@@ -56,7 +56,7 @@ NCWidgetProviding {
 
     
     // MARK: UIViewController
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         SettingsPersistanceManager.initHardCodedLights()
         SettingsPersistanceManager.initHardCodedColours()
         

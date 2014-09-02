@@ -26,13 +26,13 @@ class Light : NSObject, Equatable, NSCoding {
     }
     
     // MARK: NSCoding
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         friendlyName = aDecoder.decodeObjectForKey("friendlyName") as String
         deviceID = aDecoder.decodeObjectForKey("deviceID") as String
         super.init()
     }
     
-    func encodeWithCoder(aCoder: NSCoder!) {
+    func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(friendlyName, forKey: "friendlyName")
         aCoder.encodeObject(deviceID, forKey: "deviceID")
     }
