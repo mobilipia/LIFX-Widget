@@ -46,7 +46,6 @@ To-Do
 -----------
 Here's a completly unordered todo list of the upcoming features (or at least things I'd like to do). PR welcome ❤️.
 - Implement the colour picker in the companion app,
-- Test the LiFX bulbs picker in the companion app - Pretty sure it's not working correctly,
 - Better UI in the companion app,
 - Allow the widget to display scenes instead of bulbs and colours, configurable via the companion app,
 - Adapt the size of the widget depending on the number of lights / colours,
@@ -63,7 +62,7 @@ The most important issue is that for now, **sharing data between the companion a
 
 **Short story:** You'll need to hardcode a list of colours and lights in `SettingsPersistanceManager.swift`, `initHardCodedLights()` and `initHardCodedColours()`. The modifications made in the companion app will be reset upon launch.
 
-**Long story:** For some reason, when I archive my custom classes in the shared `NSUserDefaults` from the companion app, I can't unarchive it from the widget (and vice-versa), `NSKeyedUnarchiver.unarchiveObjectWithData()` crashes - the `NSData` is there, the keyed unarchiver just doesn't seem to understand it. Archiving and unarchiving in the same app work though... I don't know if I do it wrong, or if it's a beta-related issue, and I didn't have enough time to look into it yet.
+**Long story:** For some reason, when I archive my custom classes in the shared `NSUserDefaults` from the companion app, I can't unarchive it from the widget (and vice-versa), `NSKeyedUnarchiver.unarchiveObjectWithData()` crashes - the `NSData` is there, the keyed unarchiver just doesn't seem to understand it. Archiving and unarchiving in the same app works though... I don't know if I do it wrong, or if it's a beta-related issue, and I didn't have enough time to look into it yet.
 `initHardCoded{Lights,Colours}()` archives your custom lights and colours when you run either app, so the later calls to `NSKeyUnarchiver.unarchiveObjectWithData()` will be able to unarchive the data - since it has been archived on app launch.
 
 Also, debugging extension is a freaking pain in the ass. Sometimes, changes won't be applied when you build and run it. Sometimes, the widget's height is 0. Sometimes, the widget is removed and you'll need to add it again.
