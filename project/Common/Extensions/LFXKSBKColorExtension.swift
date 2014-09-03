@@ -12,7 +12,7 @@ import Foundation
 extension LFXHSBKColor/*: NSCoding*/ {
     
     // MARK: NSCoding
-    public convenience init(coder aDecoder: NSCoder!) {
+    convenience init(coder aDecoder: NSCoder) {
         let hue = CGFloat(aDecoder.decodeFloatForKey("hue"))
         let saturation = CGFloat(aDecoder.decodeFloatForKey("saturation"))
         let brightness = CGFloat(aDecoder.decodeFloatForKey("brightness"))
@@ -20,7 +20,7 @@ extension LFXHSBKColor/*: NSCoding*/ {
         self.init(hue:hue, saturation:saturation, brightness:brightness, kelvin:kelvin)
     }
     
-    public func encodeWithCoder(aCoder: NSCoder!) {
+    func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeFloat(Float(hue), forKey: "hue")
         aCoder.encodeFloat(Float(saturation), forKey: "saturation")
         aCoder.encodeFloat(Float(brightness), forKey: "brightness")

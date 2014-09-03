@@ -20,18 +20,18 @@ LFXLightCollectionObserver, LFXLightObserver
         startMonitoringLights()
     }
     
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let light = lights[indexPath.row]
         SettingsPersistanceManager.addLight(Light(friendlyName: light.label(), deviceID: light.deviceID))
-        navigationController.popViewControllerAnimated(true)
+        navigationController?.popViewControllerAnimated(true)
     }
     
     // MARK: UITableViewDataSource, UITableViewDelegate
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countElements(lights)
     }
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(LifxLightsTableViewCellIdentifier, forIndexPath: indexPath) as UITableViewCell
         let light = lights[indexPath.row]
         configureCell(cell, withLight:light)
@@ -63,7 +63,7 @@ LFXLightCollectionObserver, LFXLightObserver
     }
 
     func configureCell(cell: UITableViewCell, withLight light: LFXLight) {
-        cell.textLabel.text = light.label()
+        cell.textLabel?.text = light.label()
     }
 
 }

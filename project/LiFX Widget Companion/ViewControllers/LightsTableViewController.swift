@@ -26,7 +26,7 @@ class LightsTableViewController : UITableViewController {
         tableView.reloadData()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == LightViewControllerSegue) {
             let lightViewController = segue.destinationViewController as LightViewController
             configureLightViewControllerWithSelectedLight(lightViewController)
@@ -35,22 +35,22 @@ class LightsTableViewController : UITableViewController {
     
     
     // MARK: UITableViewDataSource, UITableViewDelegate
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countElements(lights)
     }
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(LightsTableViewCellIdentifier, forIndexPath: indexPath) as UITableViewCell
         let light = lights[indexPath.row]
         configureCell(cell, withLight:light)
         return cell
     }
     
-    override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
     
-    override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             removeLightAtIndexPath(indexPath)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:.Automatic)
@@ -60,7 +60,7 @@ class LightsTableViewController : UITableViewController {
     
     // MARK: Convenience methods
     func configureCell(cell: UITableViewCell, withLight light: Light) {
-        cell.textLabel.text = light.friendlyName
+        cell.textLabel?.text = light.friendlyName
     }
 
     func removeLightAtIndexPath(indexPath: NSIndexPath) {
@@ -69,8 +69,9 @@ class LightsTableViewController : UITableViewController {
     }
     
     func configureLightViewControllerWithSelectedLight(lightViewController: LightViewController) {
-        let selectedIndexPath = tableView.indexPathForSelectedRow()
-        let selectedLight = lights[selectedIndexPath.row]
-        lightViewController.light = selectedLight
+        if let selectedIndexPath = tableView.indexPathForSelectedRow() {
+            let selectedLight = lights[selectedIndexPath.row]
+            lightViewController.light = selectedLight
+        }
     }
 }

@@ -25,6 +25,6 @@ class LightViewController : UIViewController {
                 SettingsPersistanceManager.updateLight(light)
             }
         }
-        navigationController.popViewControllerAnimated(true)
+        navigationController?.popViewControllerAnimated(true)
     }
 }

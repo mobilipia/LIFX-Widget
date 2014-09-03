@@ -79,11 +79,11 @@ NCWidgetProviding {
 
     
     // MARK: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView!) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return CollectionViewSection.numberOfSections()
     }
     
-    func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let sectionObject = CollectionViewSection.fromRaw(section)!
 
         switch sectionObject {
@@ -94,7 +94,7 @@ NCWidgetProviding {
         }
     }
     
-    func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell! {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let sectionObject = CollectionViewSection.fromRaw(indexPath.section)!
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier(sectionObject.cellIdentifier(), forIndexPath: indexPath) as UICollectionViewCell
 
