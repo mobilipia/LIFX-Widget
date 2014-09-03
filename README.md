@@ -48,7 +48,6 @@ Here's a completly unordered todo list of the upcoming features (or at least thi
 - Implement the colour picker in the companion app,
 - Better UI in the companion app,
 - Allow the widget to display scenes instead of bulbs and colours, configurable via the companion app,
-- Adapt the size of the widget depending on the number of lights / colours,
 - Update the widget view in the background using the `NCWidgetProviding` protocol,
 - Display a custom view in the widget when no lights / colours are configured in the companion app, 
 - Hide the widget on cellular data (*I'm pretty sure I read somewhere I can do this*),

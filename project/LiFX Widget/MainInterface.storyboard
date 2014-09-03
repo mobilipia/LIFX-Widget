@@ -19,6 +19,9 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="un5-hr-Kkb">
                                 <rect key="frame" x="5" y="5" width="310" height="522"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="522" id="65n-A4-Grs"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="10" id="eZx-vJ-Guc">
                                     <size key="itemSize" width="40" height="40"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -92,6 +95,7 @@
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="un5-hr-Kkb" id="0gR-1r-Ina"/>
+                        <outlet property="collectionViewHeightConstraint" destination="65n-A4-Grs" id="tbi-av-SPg"/>
                         <outlet property="toogleSwitch" destination="3Gv-Hu-Rx8" id="WQm-4m-wUp"/>
                     </connections>
                 </viewController>

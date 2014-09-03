@@ -39,6 +39,7 @@ NCWidgetProviding {
     class func maximumNumberOfElementsPerSection() -> Int { return 5 }
 
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var toogleSwitch: UISwitch!
     
     var colours: [LFXHSBKColor] = []
@@ -65,16 +66,14 @@ NCWidgetProviding {
         super.init(coder: aDecoder)
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Searching for an AL replacement for this
-        self.preferredContentSize = CGSizeMake(self.view.bounds.width, 135)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateView()
         startMonitoringLights()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        updateView()
     }
 
     
@@ -209,7 +208,12 @@ NCWidgetProviding {
     // MARK: Convenience methods - Updating UI informations
     func updateView() {
         collectionView.reloadData()
+        updateCollectionViewHeight()
         updateToogleFromSelectedLight()
+    }
+    
+    func updateCollectionViewHeight() {
+        collectionViewHeightConstraint.constant = collectionView.contentSize.height
     }
     
     func updateToogleFromSelectedLight() {
