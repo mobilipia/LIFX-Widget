@@ -12,10 +12,13 @@ var ColourTableViewCellIdentifier = "ColourTableViewCellIdentifier"
 var ColourViewControllerSegue = "ColourViewControllerSegue"
 
 class ColoursTableViewController : UITableViewController {
+    
+    // MARK: Properties
     var colours: [LFXHSBKColor] {
         return SettingsPersistanceManager.savedColours()
     }
     
+
     // MARK: UIViewController
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

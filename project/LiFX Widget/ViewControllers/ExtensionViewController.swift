@@ -35,9 +35,6 @@ LFXLightCollectionObserver, LFXLightObserver,
 NCWidgetProviding {
     
     // MARK: Properties
-    // FIXME: Replace class func with class let when supported
-    class func maximumNumberOfElementsPerSection() -> Int { return 5 }
-
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var toogleSwitch: UISwitch!

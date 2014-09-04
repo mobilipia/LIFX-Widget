@@ -13,18 +13,22 @@ var LifxLightsTableViewCellIdentifier = "LifxLightTableViewCell"
 class LifxLightsTableViewController : UITableViewController,
 LFXLightCollectionObserver, LFXLightObserver
 {
+    
+    // MARK: Properties
     var lights: [LFXLight] = []
     
+    
+    // MARK: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         startMonitoringLights()
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let light = lights[indexPath.row]
-        SettingsPersistanceManager.addLight(Light(friendlyName: light.label(), deviceID: light.deviceID))
-        navigationController?.popViewControllerAnimated(true)
+        saveLightAtIndexPath(indexPath)
+        dismiss()
     }
+    
     
     // MARK: UITableViewDataSource, UITableViewDelegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,6 +41,7 @@ LFXLightCollectionObserver, LFXLightObserver
         configureCell(cell, withLight:light)
         return cell
     }
+    
     
     // MARK: LFXLightCollectionObserver
     func lightCollection(lightCollection: LFXLightCollection!, didAddLight light: LFXLight!) {
@@ -60,6 +65,15 @@ LFXLightCollectionObserver, LFXLightObserver
         for lifxLight in lifxLights.lights as [LFXLight] {
             self.lightCollection(lifxLights, didAddLight: lifxLight as LFXLight)
         }
+    }
+    
+    func saveLightAtIndexPath(indexPath: NSIndexPath) {
+        let light = lights[indexPath.row]
+        SettingsPersistanceManager.addLight(Light(friendlyName: light.label(), deviceID: light.deviceID))
+    }
+    
+    func dismiss() {
+        navigationController?.popViewControllerAnimated(true)
     }
 
     func configureCell(cell: UITableViewCell, withLight light: LFXLight) {

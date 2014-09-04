@@ -110,10 +110,10 @@ class SettingsPersistanceManager {
     */
     class func initHardCodedLights() {
         saveLights([
-            Light(friendlyName: "Bed room", deviceID: "d073d500792d"),
-            Light(friendlyName: "Living room", deviceID: "d073d50175fe"),
-            Light(friendlyName: "Office", deviceID: "d073d500792d"),
-            Light(friendlyName: "Kitchen", deviceID: "d073d500792d"),
+            Light(friendlyName: "Bed room", deviceID: "Some identifer"),
+            Light(friendlyName: "Living room", deviceID: "Get it thought lifx-http"),
+            Light(friendlyName: "Office", deviceID: "GET /lights"),
+            Light(friendlyName: "Kitchen", deviceID: "I guess you got it..."),
         ])
     }
     

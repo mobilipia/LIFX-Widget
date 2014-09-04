@@ -39,7 +39,11 @@ class ColourViewController : UIViewController {
         let (hue, saturation, brightness, alpha) = selectedColour.HSBAComponents()
 
         let generatedColour = LFXHSBKColor(hue: hue * CGFloat(LFXHSBKColorMaxHue), saturation: saturation, brightness: brightness)
-        SettingsPersistanceManager.addColour(generatedColour)
+        if let colour = colour {
+            SettingsPersistanceManager.updateColour(colour, withColour: generatedColour)
+        } else {
+            SettingsPersistanceManager.addColour(generatedColour)
+        }
     }
     
     func dismiss() {
