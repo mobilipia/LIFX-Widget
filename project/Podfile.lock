@@ -4,14 +4,17 @@ PODS:
   - CocoaLumberjack/Core (1.9.2)
   - CocoaLumberjack/Extensions (1.9.2):
     - CocoaLumberjack/Core
+  - Color-Picker-for-iOS (2.0)
   - LIFXKit (0.5.0):
     - CocoaLumberjack (~> 1.6)
 
 DEPENDENCIES:
+  - Color-Picker-for-iOS
   - LIFXKit
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
+  Color-Picker-for-iOS: 2eec454aa6b24a8b7c2537da0f61c6ead936949e
   LIFXKit: 4280129f60f1b93a631b0ecaf13432bb77b15fc8
 
 COCOAPODS: 0.33.1

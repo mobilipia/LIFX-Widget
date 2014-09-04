@@ -3,3 +3,4 @@ platform :ios, '7.0'
 link_with 'LiFX Widget', 'LiFX Widget Companion'
 
 pod 'LIFXKit'
+pod 'Color-Picker-for-iOS'
