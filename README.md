@@ -45,7 +45,6 @@ Then, build and run the `LiFX Widget Companion` scheme, followed by the `LiFX Wi
 To-Do
 -----------
 Here's a completly unordered todo list of the upcoming features (or at least things I'd like to do). PR welcome ❤️.
-- Implement the colour picker in the companion app,
 - Better UI in the companion app,
 - Allow the widget to display scenes instead of bulbs and colours, configurable via the companion app,
 - Update the widget view in the background using the `NCWidgetProviding` protocol,

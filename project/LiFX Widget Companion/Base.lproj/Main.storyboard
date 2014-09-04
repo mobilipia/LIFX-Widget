@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9DV-dr-2OO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9DV-dr-2OO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -265,20 +266,29 @@ Since widgets are displayed in a small area, you might want to shorten the name 
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To do :D" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzt-M1-rKC">
-                                <rect key="frame" x="268" y="289" width="65" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pR3-J2-2jT" customClass="HRColorPickerView">
+                                <rect key="frame" x="16" y="64" width="568" height="526"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="Wzt-M1-rKC" secondAttribute="centerY" constant="0.5" id="35X-6d-94D"/>
-                            <constraint firstAttribute="centerX" secondItem="Wzt-M1-rKC" secondAttribute="centerX" constant="-0.5" id="WQF-AM-t9C"/>
+                            <constraint firstItem="pR3-J2-2jT" firstAttribute="top" secondItem="2vr-G0-tIx" secondAttribute="bottom" id="PwL-82-lHc"/>
+                            <constraint firstItem="pR3-J2-2jT" firstAttribute="leading" secondItem="Ugb-CK-leS" secondAttribute="leadingMargin" id="aza-UC-hwS"/>
+                            <constraint firstItem="re8-nO-XuB" firstAttribute="top" secondItem="pR3-J2-2jT" secondAttribute="bottom" constant="10" id="eDP-3e-HWO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pR3-J2-2jT" secondAttribute="trailing" id="r2I-br-4mH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Some colour" id="5g0-Ce-kiY"/>
+                    <navigationItem key="navigationItem" title="Some colour" id="5g0-Ce-kiY">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="Uj2-kh-hpS">
+                            <connections>
+                                <action selector="pressedDoneButton:" destination="yOY-J2-I8M" id="TmK-ev-yyk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="colorPickerView" destination="pR3-J2-2jT" id="4qk-ET-WiM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jgi-Nh-FtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

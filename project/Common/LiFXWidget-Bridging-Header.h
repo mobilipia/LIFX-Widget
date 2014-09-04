@@ -3,3 +3,4 @@
 //
 
 #import <LIFXKit.h>
+#import <HRColorPickerView.h>

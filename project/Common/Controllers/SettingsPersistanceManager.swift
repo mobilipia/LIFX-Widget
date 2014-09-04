@@ -89,6 +89,11 @@ class SettingsPersistanceManager {
         saveColours(colours)
     }
     
+    class func updateColour(colour: LFXHSBKColor, withColour newColour: LFXHSBKColor) {
+        removeColour(colour)
+        addColour(newColour)
+    }
+    
     
     // FIXME: Remove these functions
     /*

@@ -9,5 +9,40 @@
 import UIKit
 
 class ColourViewController : UIViewController {
+    
+    // MARK: Properties
     var colour: LFXHSBKColor?
+    @IBOutlet var colorPickerView: HRColorPickerView!
+    
+    
+    // MARK: UIViewController
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initColorPickerView()
+    }
+    
+    
+    // MARK: User interactions
+    @IBAction func pressedDoneButton(sender: UIBarButtonItem) {
+        saveSelectedColour()
+        dismiss()
+    }
+    
+    
+    // MARK: Convenience methods
+    func initColorPickerView() {
+        colorPickerView.color = colour?.UIColor() ?? UIColor.randomColor()
+    }
+    
+    func saveSelectedColour() {
+        let selectedColour = colorPickerView.color
+        let (hue, saturation, brightness, alpha) = selectedColour.HSBAComponents()
+
+        let generatedColour = LFXHSBKColor(hue: hue * CGFloat(LFXHSBKColorMaxHue), saturation: saturation, brightness: brightness)
+        SettingsPersistanceManager.addColour(generatedColour)
+    }
+    
+    func dismiss() {
+        navigationController?.popViewControllerAnimated(true)
+    }
 }

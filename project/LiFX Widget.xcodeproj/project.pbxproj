@@ -19,6 +19,7 @@
 		9C0A2DFA197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C0A2DED197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex */; };
 		9C1CC8B2198978EF00465CFE /* LightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CC8B1198978EF00465CFE /* LightCollectionViewCell.swift */; };
 		9C1CC8B4198995D300465CFE /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CC8B3198995D300465CFE /* Light.swift */; };
+		9C2681AB19B84D8F00D70C45 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2681AA19B84D8F00D70C45 /* UIColorExtension.swift */; };
 		9C3CF449198FE4FA00BE6E3C /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CF448198FE4FA00BE6E3C /* ArrayExtension.swift */; };
 		9C4E2F30198EBC87009175BE /* CircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4E2F2F198EBC87009175BE /* CircleCollectionViewCell.swift */; };
 		9C50630C199408E000D21C2B /* LFXKSBKColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630B199408E000D21C2B /* LFXKSBKColorExtension.swift */; };
@@ -83,6 +84,7 @@
 		9C0A2DF6197F9BA200D94B5F /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		9C1CC8B1198978EF00465CFE /* LightCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C1CC8B3198995D300465CFE /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		9C2681AA19B84D8F00D70C45 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		9C2F54BF1995788A0027A6A1 /* LiFX Widget Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion.entitlements"; sourceTree = "<group>"; };
 		9C2F54C01995788E0027A6A1 /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements"; sourceTree = "<group>"; };
 		9C3CF448198FE4FA00BE6E3C /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				9C3CF448198FE4FA00BE6E3C /* ArrayExtension.swift */,
+				9C2681AA19B84D8F00D70C45 /* UIColorExtension.swift */,
 				9CCA9ABC1993E8740059635F /* LFXLightExtension.swift */,
 				9C50630B199408E000D21C2B /* LFXKSBKColorExtension.swift */,
 			);
@@ -464,6 +467,7 @@
 				9C50630F1994E3F100D21C2B /* SettingsPersistanceManager.swift in Sources */,
 				9C3CF449198FE4FA00BE6E3C /* ArrayExtension.swift in Sources */,
 				9C780E1B198ECD6300FA4826 /* ColourViewController.swift in Sources */,
+				9C2681AB19B84D8F00D70C45 /* UIColorExtension.swift in Sources */,
 				9C0A2DCF197F9ADE00D94B5F /* MainTableViewController.swift in Sources */,
 				9C0A2DCD197F9ADE00D94B5F /* AppDelegate.swift in Sources */,
 				9CCA9ABD1993E8740059635F /* LFXLightExtension.swift in Sources */,
