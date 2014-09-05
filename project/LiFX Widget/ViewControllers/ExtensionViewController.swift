@@ -89,9 +89,9 @@ NCWidgetProviding {
 
         switch sectionObject {
         case .Light:
-            return countElements(lights)
+            return lights.count
         case .Colour:
-            return countElements(colours)
+            return colours.count
         }
     }
     

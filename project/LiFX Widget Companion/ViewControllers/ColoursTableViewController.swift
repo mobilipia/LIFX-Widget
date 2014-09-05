@@ -36,7 +36,7 @@ class ColoursTableViewController : UITableViewController {
     
     // MARK: UITableViewDataSource, UITableViewDelegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countElements(colours)
+        return colours.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

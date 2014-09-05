@@ -32,7 +32,7 @@ LFXLightCollectionObserver, LFXLightObserver
     
     // MARK: UITableViewDataSource, UITableViewDelegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countElements(lights)
+        return lights.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
