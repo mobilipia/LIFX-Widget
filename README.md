@@ -45,9 +45,7 @@ Then, build and run the `LiFX Widget Companion` scheme, followed by the `LiFX Wi
 To-Do
 -----------
 Here's a completly unordered todo list of the upcoming features (or at least things I'd like to do). PR welcome ❤️.
-- Better UI in the companion app,
-- Update the widget view in the background using the `NCWidgetProviding` protocol,
-- Hide the widget on cellular data (*I'm pretty sure I read somewhere I can do this*),
+- Better UI in the companion app
 
 Known issues & other stuff
 -----------
