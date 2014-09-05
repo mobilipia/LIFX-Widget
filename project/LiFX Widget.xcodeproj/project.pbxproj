@@ -26,6 +26,8 @@
 		9C50630D1994255E00D21C2B /* LFXKSBKColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630B199408E000D21C2B /* LFXKSBKColorExtension.swift */; };
 		9C50630F1994E3F100D21C2B /* SettingsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630E1994E3F100D21C2B /* SettingsPersistanceManager.swift */; };
 		9C5063141994E80A00D21C2B /* SettingsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630E1994E3F100D21C2B /* SettingsPersistanceManager.swift */; };
+		9C53FBDF19BA3E2500BBE65E /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C53FBDD19BA3E2500BBE65E /* lightbulb.png */; };
+		9C53FBE019BA3E2500BBE65E /* lightbulb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C53FBDE19BA3E2500BBE65E /* lightbulb@2x.png */; };
 		9C77C886198FEAC200EC55B9 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CF448198FE4FA00BE6E3C /* ArrayExtension.swift */; };
 		9C780E10198ECCA300FA4826 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CC8B3198995D300465CFE /* Light.swift */; };
 		9C780E15198ECD3400FA4826 /* LightsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C780E14198ECD3400FA4826 /* LightsTableViewController.swift */; };
@@ -91,6 +93,8 @@
 		9C4E2F2F198EBC87009175BE /* CircleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C50630B199408E000D21C2B /* LFXKSBKColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFXKSBKColorExtension.swift; sourceTree = "<group>"; };
 		9C50630E1994E3F100D21C2B /* SettingsPersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPersistanceManager.swift; sourceTree = "<group>"; };
+		9C53FBDD19BA3E2500BBE65E /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lightbulb.png; path = Resources/lightbulb.png; sourceTree = "<group>"; };
+		9C53FBDE19BA3E2500BBE65E /* lightbulb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lightbulb@2x.png"; path = "Resources/lightbulb@2x.png"; sourceTree = "<group>"; };
 		9C780E14198ECD3400FA4826 /* LightsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsTableViewController.swift; sourceTree = "<group>"; };
 		9C780E16198ECD4900FA4826 /* ColoursTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoursTableViewController.swift; sourceTree = "<group>"; };
 		9C780E18198ECD5300FA4826 /* LightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 				9C4E2F33198EBFD8009175BE /* ViewControllers */,
 				9C4E2F31198EBFC2009175BE /* Views */,
 				9C0A2DF6197F9BA200D94B5F /* MainInterface.storyboard */,
+				9C53FBD819BA3DF800BBE65E /* Resources */,
 				9C0A2DF2197F9BA200D94B5F /* Supporting Files */,
 			);
 			path = "LiFX Widget";
@@ -237,6 +242,15 @@
 				9C50630E1994E3F100D21C2B /* SettingsPersistanceManager.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9C53FBD819BA3DF800BBE65E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C53FBDD19BA3E2500BBE65E /* lightbulb.png */,
+				9C53FBDE19BA3E2500BBE65E /* lightbulb@2x.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		9C780E0E198ECC8F00FA4826 /* ViewControllers */ = {
@@ -386,6 +400,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0A2DF7197F9BA200D94B5F /* MainInterface.storyboard in Resources */,
+				9C53FBDF19BA3E2500BBE65E /* lightbulb.png in Resources */,
+				9C53FBE019BA3E2500BBE65E /* lightbulb@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,9 @@ import UIKit
 import NotificationCenter
 
 
+let kEmptyBulbsCollectionViewHeight: CGFloat = 100
+
+
 enum CollectionViewSection : Int {
     case Light = 0
     case Colour = 1
@@ -31,6 +34,7 @@ enum CollectionViewSection : Int {
 
 class ExtensionViewController: UIViewController,
 UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout,
+DZNEmptyDataSetSource, DZNEmptyDataSetDelegate,
 LFXLightCollectionObserver, LFXLightObserver,
 NCWidgetProviding {
     
@@ -65,6 +69,7 @@ NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureEmptyDataSet()
         startMonitoringLights()
     }
     
@@ -131,6 +136,38 @@ NCWidgetProviding {
         }
         
         updateView()
+    }
+    
+    
+    // MARK: DNZEmptyDataSetDataSource, DNZEmptyDataSetDelegate
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        let image = UIImage(named: "lightbulb")
+        return image
+    }
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let titleString = "You havn't set up any lights yet 😢"
+        let attributes = [
+            NSForegroundColorAttributeName: UIColor.whiteColor(),
+            NSFontAttributeName: UIFont.systemFontOfSize(15)
+        ]
+        
+        let title = NSAttributedString(string: titleString, attributes: attributes)
+        return title
+    }
+
+    func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
+        let titleString = "Open companion app"
+        let attributes = [
+            NSForegroundColorAttributeName: UIColor.lightGrayColor(),
+            NSFontAttributeName: UIFont.systemFontOfSize(13)
+        ]
+        
+        let buttonTitle = NSAttributedString(string: titleString, attributes: attributes)
+        return buttonTitle
+    }
+    
+    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
+        openCompanionApp()
     }
     
     
@@ -204,9 +241,15 @@ NCWidgetProviding {
     
     // MARK: Convenience methods - Updating UI informations
     func updateView() {
+        if (lights.isEmpty && colours.isEmpty) {
+            collectionViewHeightConstraint.constant = kEmptyBulbsCollectionViewHeight
+            toogleSwitch.hidden = true
+        } else {
+            updateCollectionViewHeight()
+            toogleSwitch.hidden = false
+            updateToogleFromSelectedLight()
+        }
         collectionView.reloadData()
-        updateCollectionViewHeight()
-        updateToogleFromSelectedLight()
     }
     
     func updateCollectionViewHeight() {
@@ -254,6 +297,8 @@ NCWidgetProviding {
         cell.configureWithColour(colour.UIColor(), isEnabled: hasSelectedLight, isSelected: isSelected)
     }
     
+    
+    // MARK: Convenience methods - Others
     func selectLightAtIndex(index: Int) {
         let light = lights[index]
         if light.isAvailable {
@@ -268,6 +313,16 @@ NCWidgetProviding {
             let selectedColour = colours[index]
             selectedLight.lifxLight?.setColor(selectedColour)
         }
+    }
+    
+    func configureEmptyDataSet() {
+        collectionView.emptyDataSetSource = self
+        collectionView.emptyDataSetDelegate = self
+    }
+    
+    func openCompanionApp() {
+        let companionURL = NSURL(string: "LIFXWidgetCompanion://")
+        extensionContext?.openURL(companionURL, completionHandler: nil)
     }
 
 
