@@ -4,3 +4,4 @@ link_with 'LiFX Widget', 'LiFX Widget Companion'
 
 pod 'LIFXKit'
 pod 'Color-Picker-for-iOS'
+pod 'DZNEmptyDataSet'
