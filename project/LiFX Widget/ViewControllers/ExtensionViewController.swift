@@ -198,11 +198,6 @@ NCWidgetProviding {
     
 
     // MARK: NCWidgetProviding
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-        // TODO: Update view
-        completionHandler(NCUpdateResult.NoData)
-    }
-    
     func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
         return UIEdgeInsetsZero
     }
