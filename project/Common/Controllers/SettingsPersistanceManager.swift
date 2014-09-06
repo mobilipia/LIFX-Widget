@@ -46,9 +46,13 @@ class SettingsPersistanceManager {
         saveLights(lights)
     }
     
-    class func updateLight(light: Light) {
-        removeLight(light)
-        addLight(light)
+    class func updateLight(light: Light, withName name: String) {
+        var lights = savedLights()
+        if let index = find(lights, light) {
+            light.friendlyName = name
+            lights[index] = light
+            saveLights(lights)
+        }
     }
     
     class func hasLightForLifxLight(lifxLight: LFXLight) -> Bool {
@@ -90,8 +94,11 @@ class SettingsPersistanceManager {
     }
     
     class func updateColour(colour: LFXHSBKColor, withColour newColour: LFXHSBKColor) {
-        removeColour(colour)
-        addColour(newColour)
+        var colours = savedColours()
+        if let index = find(colours, colour) {
+            colours[index] = newColour
+            saveColours(colours)
+        }
     }
     
     
@@ -125,6 +132,6 @@ class SettingsPersistanceManager {
             LFXHSBKColor(hue: 150, saturation: 1, brightness: 0.6),
             LFXHSBKColor(hue: 200, saturation: 1, brightness: 0.6),
             LFXHSBKColor(hue: 0, saturation: 0, brightness: 0.6)
-            ])
+        ])
     }
 }
