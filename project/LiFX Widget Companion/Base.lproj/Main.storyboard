@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="-633" y="451"/>
         </scene>
-        <!--Configuration-->
+        <!--Main Table View Controller-->
         <scene sceneID="w1y-63-Fzu">
             <objects>
-                <tableViewController title="Configuration" id="I5a-X1-3ax" customClass="MainTableViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="I5a-X1-3ax" customClass="MainTableViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kOc-Xh-v5X">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,13 +74,13 @@
                             <outlet property="delegate" destination="I5a-X1-3ax" id="ljp-M4-LRD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="LiFX Widget Companion" id="yKs-os-lpM"/>
+                    <navigationItem key="navigationItem" id="yKs-os-lpM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tBe-ZP-UYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="63" y="451"/>
         </scene>
-        <!--LiFX Lights-->
+        <!--LIFX Lights-->
         <scene sceneID="N1T-AU-6yP">
             <objects>
                 <tableViewController id="EWp-JX-Rt8" customClass="LifxLightsTableViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,45 +109,55 @@
                             <outlet property="delegate" destination="EWp-JX-Rt8" id="ITy-Of-K4D"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="LiFX Lights" id="1pb-K7-P15"/>
+                    <navigationItem key="navigationItem" title="LIFX Lights" id="1pb-K7-P15"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qXB-H2-LoH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="807" y="-231"/>
+            <point key="canvasLocation" x="1529" y="450"/>
         </scene>
-        <!--Lights-->
+        <!--Displayed lights-->
         <scene sceneID="czJ-gB-5MP">
             <objects>
-                <tableViewController title="Lights" id="vmH-PE-SKQ" customClass="LightsTableViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jdu-g7-7OQ">
+                <tableViewController id="vmH-PE-SKQ" customClass="LightsTableViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jdu-g7-7OQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LightTableViewCell" textLabel="h5v-2s-s7Q" style="IBUITableViewCellStyleDefault" id="a47-06-bUe">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LightTableViewCell" rowHeight="55" id="a47-06-bUe" customClass="TextFieldTableViewCell" customModule="LiFX_Widget_Companion" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a47-06-bUe" id="0S5-1M-8hZ">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h5v-2s-s7Q">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Light" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j0l-Ge-8t6">
+                                            <rect key="frame" x="23" y="8" width="469" height="38"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="vmH-PE-SKQ" id="Yj1-qU-MN6"/>
+                                            </connections>
+                                        </textField>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="j0l-Ge-8t6" firstAttribute="leading" secondItem="0S5-1M-8hZ" secondAttribute="leadingMargin" constant="15" id="7rp-ZG-6Ad"/>
+                                        <constraint firstItem="j0l-Ge-8t6" firstAttribute="trailing" secondItem="0S5-1M-8hZ" secondAttribute="trailingMargin" constant="-100" id="G74-2l-JbT"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="j0l-Ge-8t6" secondAttribute="bottom" id="o7P-74-apm"/>
+                                        <constraint firstItem="j0l-Ge-8t6" firstAttribute="top" secondItem="0S5-1M-8hZ" secondAttribute="topMargin" id="rqg-Nu-nSM"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="cRE-6w-vJO" kind="show" identifier="LightViewControllerSegue" id="WGk-0b-nhB"/>
+                                    <outlet property="textField" destination="j0l-Ge-8t6" id="Fvp-h1-dAq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="vmH-PE-SKQ" id="qzp-S2-CPF"/>
                             <outlet property="delegate" destination="vmH-PE-SKQ" id="Kd5-XR-vAx"/>
+                            <outletCollection property="gestureRecognizers" destination="qOX-vC-EAs" appends="YES" id="yvE-oX-oOi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Widget lights" id="p9m-yV-6zL">
+                    <navigationItem key="navigationItem" title="Displayed lights" id="p9m-yV-6zL">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Hl7-dF-aR9">
                             <connections>
                                 <segue destination="EWp-JX-Rt8" kind="show" identifier="LifxLightViewControllerSegue" id="z5X-Xc-6Yn"/>
@@ -156,72 +166,19 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQT-dd-LSD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="807" y="451"/>
-        </scene>
-        <!--Some light-->
-        <scene sceneID="Tjf-oo-FTQ">
-            <objects>
-                <viewController id="cRE-6w-vJO" customClass="LightViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MNM-hB-ARo"/>
-                        <viewControllerLayoutGuide type="bottom" id="GOx-Cf-mtJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gQk-Gg-wTj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Light nickname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lFH-Dw-BWY">
-                                <rect key="frame" x="20" y="84" width="560" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="LX3-vB-B8t"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="560" translatesAutoresizingMaskIntoConstraints="NO" id="6uf-cE-5eh">
-                                <rect key="frame" x="20" y="134" width="560" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="PTw-Me-vrt"/>
-                                </constraints>
-                                <string key="text">A light can be nicknamed.
-
-Since widgets are displayed in a small area, you might want to shorten the name displayed in the widget - using initials, for example.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="lFH-Dw-BWY" firstAttribute="leading" secondItem="gQk-Gg-wTj" secondAttribute="leading" constant="20" id="4aA-3Y-2EH"/>
-                            <constraint firstAttribute="trailing" secondItem="lFH-Dw-BWY" secondAttribute="trailing" constant="20" id="5yE-GS-oVU"/>
-                            <constraint firstItem="6uf-cE-5eh" firstAttribute="leading" secondItem="gQk-Gg-wTj" secondAttribute="leading" constant="20" id="A1X-dY-hj3"/>
-                            <constraint firstAttribute="trailing" secondItem="6uf-cE-5eh" secondAttribute="trailing" constant="20" id="QZP-mc-nbo"/>
-                            <constraint firstItem="6uf-cE-5eh" firstAttribute="top" secondItem="lFH-Dw-BWY" secondAttribute="bottom" constant="20" id="azC-tk-ZHa"/>
-                            <constraint firstItem="lFH-Dw-BWY" firstAttribute="top" secondItem="MNM-hB-ARo" secondAttribute="bottom" constant="20" id="pgb-BN-vPS"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Some light" id="53F-pO-fev">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="txf-ql-Gkh">
-                            <connections>
-                                <action selector="pressedDoneButton:" destination="cRE-6w-vJO" id="gDk-bX-hgC"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                <tapGestureRecognizer id="qOX-vC-EAs">
                     <connections>
-                        <outlet property="textField" destination="lFH-Dw-BWY" id="AfR-lI-SkE"/>
+                        <action selector="tappedTableView:" destination="vmH-PE-SKQ" id="zu7-UZ-rYB"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kBM-pA-HhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1499" y="451"/>
+            <point key="canvasLocation" x="807" y="450"/>
         </scene>
         <!--Colours-->
         <scene sceneID="NhI-cu-2pd">
             <objects>
                 <tableViewController id="W1u-cc-oNL" customClass="ColoursTableViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="22" sectionFooterHeight="22" id="ODI-Zh-tTl">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="95" sectionHeaderHeight="22" sectionFooterHeight="22" id="ODI-Zh-tTl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -254,7 +211,7 @@ Since widgets are displayed in a small area, you might want to shorten the name 
             </objects>
             <point key="canvasLocation" x="807" y="1211"/>
         </scene>
-        <!--Some colour-->
+        <!--Colour picker-->
         <scene sceneID="hvy-kN-jbm">
             <objects>
                 <viewController id="yOY-J2-I8M" customClass="ColourViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
@@ -279,7 +236,7 @@ Since widgets are displayed in a small area, you might want to shorten the name 
                             <constraint firstAttribute="trailingMargin" secondItem="pR3-J2-2jT" secondAttribute="trailing" id="r2I-br-4mH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Some colour" id="5g0-Ce-kiY">
+                    <navigationItem key="navigationItem" title="Colour picker" id="5g0-Ce-kiY">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="Uj2-kh-hpS">
                             <connections>
                                 <action selector="pressedDoneButton:" destination="yOY-J2-I8M" id="TmK-ev-yyk"/>

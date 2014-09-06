@@ -11,7 +11,8 @@ import UIKit
 var ColourTableViewCellIdentifier = "ColourTableViewCellIdentifier"
 var ColourViewControllerSegue = "ColourViewControllerSegue"
 
-class ColoursTableViewController : UITableViewController {
+class ColoursTableViewController : GenericTableViewController
+{
     
     // MARK: Properties
     var colours: [LFXHSBKColor] {
@@ -20,6 +21,14 @@ class ColoursTableViewController : UITableViewController {
     
 
     // MARK: UIViewController
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        emptyImage = UIImage(named: "colour-picker")
+        emptyTitle = "No colours configured"
+        emptyButtonTitle = "Add some by pressing the '+' button"
+        tintColor = UIColor(red: 5/CGFloat(255), green: 222/CGFloat(255), blue: 255/CGFloat(255), alpha: 1)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         // FIXME: This is crap
@@ -54,13 +63,20 @@ class ColoursTableViewController : UITableViewController {
         if editingStyle == .Delete {
             removeColourAtIndexPath(indexPath)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:.Automatic)
+            tableView.reloadEmptyDataSet()
         }
     }
     
     
+    // MARK: DZNEmptyDataSetDelegate
+    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
+        displayColourPicker()
+    }
+    
+
     // MARK: Convenience methods
     func configureCell(cell: UITableViewCell, withColour colour: LFXHSBKColor) {
-        cell.backgroundColor = colour.UIColor()
+        cell.contentView.backgroundColor = colour.UIColor()
     }
     
     func removeColourAtIndexPath(indexPath: NSIndexPath) {
@@ -73,5 +89,9 @@ class ColoursTableViewController : UITableViewController {
             let selectedColour = colours[selectedIndexPath.row]
             colourViewController.colour = selectedColour
         }
+    }
+    
+    func displayColourPicker() {
+        performSegueWithIdentifier(ColourViewControllerSegue, sender: nil)
     }
 }

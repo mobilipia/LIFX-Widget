@@ -10,7 +10,7 @@ import UIKit
 
 var LifxLightsTableViewCellIdentifier = "LifxLightTableViewCell"
 
-class LifxLightsTableViewController : UITableViewController,
+class LifxLightsTableViewController : GenericTableViewController,
 LFXLightCollectionObserver, LFXLightObserver
 {
     
@@ -21,6 +21,10 @@ LFXLightCollectionObserver, LFXLightObserver
     // MARK: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+        emptyImage = UIImage(named: "no-lifx")
+        emptyTitle = "Can't find any LIFX on the network"
+        emptyDescription = "Are you on the same WiFi network ?"
+        tintColor = UIColor(red: 132/CGFloat(255), green: 235/CGFloat(255), blue: 147/CGFloat(255), alpha: 1)
         startMonitoringLights()
     }
     
@@ -55,6 +59,7 @@ LFXLightCollectionObserver, LFXLightObserver
         lights.remove(light!)
         tableView.reloadData()
     }
+    
     
     // MARK: Convenience methods
     func startMonitoringLights() {

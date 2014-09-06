@@ -141,7 +141,7 @@ NCWidgetProviding {
     
     // MARK: DNZEmptyDataSetDataSource, DNZEmptyDataSetDelegate
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
-        let image = UIImage(named: "lightbulb")
+        let image = UIImage(named: "small-lightbulb")
         return image
     }
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
