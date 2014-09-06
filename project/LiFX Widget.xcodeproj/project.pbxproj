@@ -10,7 +10,7 @@
 		402987FCEC69483F92638218 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E19E2736E044AD91654AFC /* libPods.a */; };
 		6D5BF72EAE4C4821A9F26E91 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E19E2736E044AD91654AFC /* libPods.a */; };
 		9C0A2DCD197F9ADE00D94B5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A2DCC197F9ADE00D94B5F /* AppDelegate.swift */; };
-		9C0A2DCF197F9ADE00D94B5F /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A2DCE197F9ADE00D94B5F /* MainTableViewController.swift */; };
+		9C0A2DCF197F9ADE00D94B5F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A2DCE197F9ADE00D94B5F /* MainViewController.swift */; };
 		9C0A2DD2197F9ADE00D94B5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0A2DD0197F9ADE00D94B5F /* Main.storyboard */; };
 		9C0A2DD4197F9ADE00D94B5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C0A2DD3197F9ADE00D94B5F /* Images.xcassets */; };
 		9C0A2DF0197F9BA200D94B5F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0A2DEF197F9BA200D94B5F /* NotificationCenter.framework */; };
@@ -23,6 +23,7 @@
 		9C3CF449198FE4FA00BE6E3C /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CF448198FE4FA00BE6E3C /* ArrayExtension.swift */; };
 		9C4E2F30198EBC87009175BE /* CircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4E2F2F198EBC87009175BE /* CircleCollectionViewCell.swift */; };
 		9C50083219BB62E7003F9B38 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50083119BB62E7003F9B38 /* TextFieldTableViewCell.swift */; };
+		9C50083419BB7286003F9B38 /* Backgrounds.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C50083319BB7286003F9B38 /* Backgrounds.xcassets */; };
 		9C50630C199408E000D21C2B /* LFXKSBKColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630B199408E000D21C2B /* LFXKSBKColorExtension.swift */; };
 		9C50630D1994255E00D21C2B /* LFXKSBKColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630B199408E000D21C2B /* LFXKSBKColorExtension.swift */; };
 		9C50630F1994E3F100D21C2B /* SettingsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630E1994E3F100D21C2B /* SettingsPersistanceManager.swift */; };
@@ -77,7 +78,7 @@
 		9C0A2DC7197F9ADE00D94B5F /* LiFX Widget Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LiFX Widget Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C0A2DCB197F9ADE00D94B5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C0A2DCC197F9ADE00D94B5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9C0A2DCE197F9ADE00D94B5F /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		9C0A2DCE197F9ADE00D94B5F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9C0A2DD1197F9ADE00D94B5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C0A2DD3197F9ADE00D94B5F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9C0A2DED197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +94,7 @@
 		9C3CF448198FE4FA00BE6E3C /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		9C4E2F2F198EBC87009175BE /* CircleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C50083119BB62E7003F9B38 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldTableViewCell.swift; path = Views/TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		9C50083319BB7286003F9B38 /* Backgrounds.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Backgrounds.xcassets; sourceTree = "<group>"; };
 		9C50630B199408E000D21C2B /* LFXKSBKColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFXKSBKColorExtension.swift; sourceTree = "<group>"; };
 		9C50630E1994E3F100D21C2B /* SettingsPersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPersistanceManager.swift; sourceTree = "<group>"; };
 		9C780E14198ECD3400FA4826 /* LightsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsTableViewController.swift; sourceTree = "<group>"; };
@@ -267,7 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				9CA00E1819BA54FD008746B2 /* GenericTableViewController.swift */,
-				9C0A2DCE197F9ADE00D94B5F /* MainTableViewController.swift */,
+				9C0A2DCE197F9ADE00D94B5F /* MainViewController.swift */,
 				9C780E14198ECD3400FA4826 /* LightsTableViewController.swift */,
 				9C780E1C198ED23000FA4826 /* LifxLightsTableViewController.swift */,
 				9C780E16198ECD4900FA4826 /* ColoursTableViewController.swift */,
@@ -300,6 +302,7 @@
 			children = (
 				9C0A2DD3197F9ADE00D94B5F /* Images.xcassets */,
 				9CA00E1419BA4829008746B2 /* Icons.xcassets */,
+				9C50083319BB7286003F9B38 /* Backgrounds.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				9C0A2DD2197F9ADE00D94B5F /* Main.storyboard in Resources */,
 				9CA00E1519BA4829008746B2 /* Icons.xcassets in Resources */,
 				9C0A2DD4197F9ADE00D94B5F /* Images.xcassets in Resources */,
+				9C50083419BB7286003F9B38 /* Backgrounds.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,7 +500,7 @@
 				9C780E1B198ECD6300FA4826 /* ColourViewController.swift in Sources */,
 				9C50083219BB62E7003F9B38 /* TextFieldTableViewCell.swift in Sources */,
 				9C2681AB19B84D8F00D70C45 /* UIColorExtension.swift in Sources */,
-				9C0A2DCF197F9ADE00D94B5F /* MainTableViewController.swift in Sources */,
+				9C0A2DCF197F9ADE00D94B5F /* MainViewController.swift in Sources */,
 				9C0A2DCD197F9ADE00D94B5F /* AppDelegate.swift in Sources */,
 				9CCA9ABD1993E8740059635F /* LFXLightExtension.swift in Sources */,
 				9C50630C199408E000D21C2B /* LFXKSBKColorExtension.swift in Sources */,
@@ -641,6 +645,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -659,6 +664,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -680,6 +686,7 @@
 				PRODUCT_NAME = "com.maxime-dechalendar.LiFXWidget.$(TARGET_NAME:rfc1034identifier)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -697,6 +704,7 @@
 				PRODUCT_NAME = "com.maxime-dechalendar.LiFXWidget.$(TARGET_NAME:rfc1034identifier)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

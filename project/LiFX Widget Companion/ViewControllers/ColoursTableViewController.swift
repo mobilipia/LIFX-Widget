@@ -23,7 +23,7 @@ class ColoursTableViewController : GenericTableViewController
     // MARK: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        emptyImage = UIImage(named: "colour-picker")
+        emptyImage = UIImage(named: "large-colour-wheel")
         emptyTitle = "No colours configured"
         emptyButtonTitle = "Add some by pressing the '+' button"
         tintColor = UIColor(red: 5/CGFloat(255), green: 222/CGFloat(255), blue: 255/CGFloat(255), alpha: 1)
