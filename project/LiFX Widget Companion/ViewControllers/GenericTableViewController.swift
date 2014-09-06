@@ -88,7 +88,7 @@ DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
     
     func attributedStringWithTitle(title: String, size: CGFloat, color: UIColor) -> NSAttributedString {
         return NSAttributedString(string: title, attributes: [
-            NSFontAttributeName: UIFont.systemFontOfSize(12),
+            NSFontAttributeName: UIFont.systemFontOfSize(size),
             NSForegroundColorAttributeName: color
         ])
     }
