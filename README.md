@@ -9,6 +9,7 @@ Thanks Apple for opening iOS 8 !
 Screenshots
 -----------
 All screenshots [here](https://github.com/DCMaxxx/LiFX-Widget/tree/master/screenshots, "screenshots")
+
 ![Widget screenshot](/screenshots/Widget.png?raw=true "Widget screenshot")
 
 Widget
