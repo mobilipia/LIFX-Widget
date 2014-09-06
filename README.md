@@ -42,25 +42,22 @@ To enable data communication (displayed lights / colours) between the companion 
 
 Then, build and run the `LiFX Widget Companion` scheme, followed by the `LiFX Widget` one.
 
-To-Do
------------
-Here's a completly unordered todo list of the upcoming features (or at least things I'd like to do). PR welcome ❤️.
-- Better UI in the companion app
-
 Known issues & other stuff
 -----------
-1) You'll see a few `FIXME` here and there in the code. These are working stuff that I don't like. I won't be working on it for a couple of weeks, and I've been asked to put the repo on GitHub, so here it is.
+**1)** You'll see a few `FIXME` here and there in the code. These are working stuff that I don't like. I won't be working on it for a couple of weeks, and I've been asked to put the repo on GitHub, so here it is.
 
-2) The most important issue is that for now, **sharing data between the companion app and the widget doesn't work**. ie: the configuration of displayed lights and colours.
+**2)** Companion app's empty views aren't centered. Waiting for a fix from DNZEmptyDataSet, see [here](https://github.com/dzenbot/DZNEmptyDataSet/issues/11, "DNZ Empty DataSet issues")
+
+**3)** The companion app main view controller's background changes it size for some reason. I'll look into that.
+
+**4)** The most important issue is that for now, **sharing data between the companion app and the widget doesn't work**. ie: the configuration of displayed lights and colours.
 
 **Short story:** You'll need to hardcode a list of colours and lights in `SettingsPersistanceManager.swift`, `initHardCodedLights()` and `initHardCodedColours()`. The modifications made in the companion app will be reset upon launch.
 
 **Long story:** For some reason, when I archive my custom classes in the shared `NSUserDefaults` from the companion app, I can't unarchive it from the widget (and vice-versa), `NSKeyedUnarchiver.unarchiveObjectWithData()` crashes - the `NSData` is there, the keyed unarchiver just doesn't seem to understand it. Archiving and unarchiving in the same app works though... I don't know if I do it wrong, or if it's a beta-related issue, and I didn't have enough time to look into it yet.
 `initHardCoded{Lights,Colours}()` archives your custom lights and colours when you run either app, so the later calls to `NSKeyUnarchiver.unarchiveObjectWithData()` will be able to unarchive the data - since it has been archived on app launch.
 
-3) Companion app's empty views aren't centered. Waiting for a fix from DNZEmptyDataSet, see [here](https://github.com/dzenbot/DZNEmptyDataSet/issues/11, "DNZ Empty DataSet issues")
-
-4) Also, debugging extension is a freaking pain in the ass. Sometimes, changes won't be applied when you build and run it. Sometimes, the widget's height is 0. Sometimes, the widget is removed and you'll need to add it again.
+5) Also, debugging extension is a freaking pain in the ass. Sometimes, changes won't be applied when you build and run it. Sometimes, the widget's height is 0. Sometimes, the widget is removed and you'll need to add it again.
 When I get these issues I remove the app from my device or reset simulators, run the companion scheme then the widget scheme. It *usually* works.
 
 Have fun 😄 !
