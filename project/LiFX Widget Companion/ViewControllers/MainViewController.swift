@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     
     // UIViewController
     override func viewWillAppear(animated: Bool) {
-        super.viewWillDisappear(animated)
+        super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
