@@ -46,15 +46,13 @@ Then, build and run the `LiFX Widget Companion` scheme, followed by the `LiFX Wi
 
 Known issues & other stuff
 -----------
-**1)** Companion app's empty views aren't centered. Waiting for a fix from DNZEmptyDataSet, see [here](https://github.com/dzenbot/DZNEmptyDataSet/issues/11, "DNZ Empty DataSet issues")
+The only known issue is that for now, **sharing data between the companion app and the widget doesn't work**. ie: the configuration of displayed lights and colours. Apple's new API are buggy.
 
-**2)** The companion app main view controller's background changes it size for some reason. I'll look into that.
+**Short story:**  
+You'll need to hardcode a list of colours and lights in `SettingsPersistanceManager.swift`, `initHardCodedLights()` and `initHardCodedColours()`. Modifications made in companion app aren't persistent.
 
-**3)** The most important issue is that for now, **sharing data between the companion app and the widget doesn't work**. ie: the configuration of displayed lights and colours.
-
-**Short story:** You'll need to hardcode a list of colours and lights in `SettingsPersistanceManager.swift`, `initHardCodedLights()` and `initHardCodedColours()`. The modifications made in the companion app will be reset upon launch.
-
-**Long story:** For some reason, when I archive my custom classes in the shared `NSUserDefaults` from the companion app, I can't unarchive it from the widget (and vice-versa), `NSKeyedUnarchiver.unarchiveObjectWithData()` crashes - the `NSData` is there, the keyed unarchiver just doesn't seem to understand it. Archiving and unarchiving in the same app works though... I don't know if I do it wrong, or if it's a beta-related issue, and I didn't have enough time to look into it yet.
+**Long story:**  
+Apple's new API are buggy, sharing data between apps doesn't work as expected. Sometimes, [the data isn't written to the shared `NSUserDefaults`](https://devforums.apple.com/message/1036434#1036434, "Apple dev forums").
+Sometimes, custom objects archived in `NSUserDefaults` can't be decoded. And so on.  
+In my case, when I archive my custom classes in the shared `NSUserDefaults` from the companion app, I can't unarchive it from the widget (and vice-versa), `NSKeyedUnarchiver.unarchiveObjectWithData()` crashes - the `NSData` is there, the keyed unarchiver just doesn't seem to understand it. Archiving and unarchiving in the same app works though...  
 `initHardCoded{Lights,Colours}()` archives your custom lights and colours when you run either app, so the later calls to `NSKeyUnarchiver.unarchiveObjectWithData()` will be able to unarchive the data - since it has been archived on app launch.
-
-Have fun 😄 !
