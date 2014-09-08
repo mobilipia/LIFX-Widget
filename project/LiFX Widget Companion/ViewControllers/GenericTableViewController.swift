@@ -64,6 +64,20 @@ DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
         }
     }
     
+    func emptyDataSetWillAppear(scrollView: UIScrollView!) {
+        tableView.tableFooterView?.hidden = true
+    }
+    
+    func emptyDataSetWillDisappear(scrollView: UIScrollView!) {
+        tableView.tableFooterView?.hidden = false
+    }
+    
+    func offsetForEmptyDataSet(scrollView: UIScrollView!) -> CGPoint {
+        if let tableFooterView = tableView.tableFooterView {
+            return CGPointMake(0, CGRectGetHeight(tableFooterView.bounds) / CGFloat(2))
+        }
+        return CGPointZero
+    }
     
     // MARK: Public methods
     func configureNavigationBarColor(navigationBarColor: UIColor, buttonsColor: UIColor) {
@@ -77,7 +91,9 @@ DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
     
     // MARK: Convenience methods
     func configureTableView() {
-        tableView.tableFooterView = UIView()
+        if tableView.tableFooterView == nil {
+            tableView.tableFooterView = UIView()
+        }
         tableView.backgroundColor = UIColor(red: 245/CGFloat(255), green: 245/CGFloat(255), blue: 245/CGFloat(255), alpha: 1)
     }
     
