@@ -100,14 +100,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LifxLightTableViewCell" textLabel="fP0-9b-zqn" style="IBUITableViewCellStyleDefault" id="Ac9-Qe-9n6">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LifxLightTableViewCell" textLabel="fP0-9b-zqn" rowHeight="55" style="IBUITableViewCellStyleDefault" id="Ac9-Qe-9n6">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ac9-Qe-9n6" id="Xtc-PX-fPL">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fP0-9b-zqn">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -135,6 +135,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="v80-B4-ckI">
+                            <rect key="frame" x="0.0" y="141" width="600" height="135"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlV-gU-01r">
+                                    <rect key="frame" x="31" y="34" width="539" height="67"/>
+                                    <string key="text">Since widget are displayed in a small area, you can nickname a light by pressing its label.
+
+The real name of your light won't be updated.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="centerY" secondItem="BlV-gU-01r" secondAttribute="centerY" id="EOV-Ho-6Tz"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BlV-gU-01r" secondAttribute="trailing" constant="30" id="STT-HH-ZNi"/>
+                                <constraint firstItem="BlV-gU-01r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="v80-B4-ckI" secondAttribute="leading" constant="30" id="VTb-0q-PJH"/>
+                                <constraint firstAttribute="centerX" secondItem="BlV-gU-01r" secondAttribute="centerX" constant="-0.5" id="zX8-tx-n5c"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LightTableViewCell" rowHeight="55" id="a47-06-bUe" customClass="TextFieldTableViewCell" customModule="LiFX_Widget_Companion" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
