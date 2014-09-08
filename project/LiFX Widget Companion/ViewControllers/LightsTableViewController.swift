@@ -10,7 +10,7 @@ import UIKit
 
 let LightsTableViewCellIdentifier = "LightTableViewCell"
 let LightViewControllerSegue = "LightViewControllerSegue"
-let LifxLightViewControllerSegue = "LifxLightViewControllerSegue"
+let LifxLightPickerSegue = "LifxLightViewControllerSegue"
 
 class LightsTableViewController : GenericTableViewController,
 UITextFieldDelegate
@@ -26,16 +26,16 @@ UITextFieldDelegate
     // MARK: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        emptyImage = UIImage(named: "large-lightbulb")
-        emptyTitle = "No lights configured"
-        emptyButtonTitle = "Add some by pressing the '+' button"
-        tintColor = UIColor(red: 244/CGFloat(255), green: 144/CGFloat(255), blue: 255/CGFloat(255), alpha: 1)
+        configureView()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        // FIXME: This is crap
-        tableView.reloadData()
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == LifxLightPickerSegue {
+            let lifxLightPicker = segue.destinationViewController as LifxLightsTableViewController
+            configureLifxLightPicker(lifxLightPicker)
+        }
+        
+        
     }
 
     
@@ -94,13 +94,16 @@ UITextFieldDelegate
     
     
     // MARK: Convenience methods
+    func configureView() {
+        emptyImage = UIImage(named: "large-lightbulb")
+        emptyTitle = "No lights configured"
+        emptyButtonTitle = "Add some by pressing the '+' button"
+        tintColor = UIColor(red: 244/CGFloat(255), green: 144/CGFloat(255), blue: 255/CGFloat(255), alpha: 1)
+    }
+    
     func removeLightAtIndexPath(indexPath: NSIndexPath) {
         var light = lights[indexPath.row]
         SettingsPersistanceManager.removeLight(light)
-    }
-    
-    func displayLifxLightPicker() {
-        performSegueWithIdentifier(LifxLightViewControllerSegue, sender: nil)
     }
     
     func saveLightAndDismissKeyboard() {
@@ -123,5 +126,26 @@ UITextFieldDelegate
         let cell = view as UITableViewCell
         let indexPath = tableView.indexPathForCell(cell)
         return indexPath
+    }
+
+    func displayLifxLightPicker() {
+        performSegueWithIdentifier(LifxLightPickerSegue, sender: nil)
+    }
+    
+    func configureLifxLightPicker(lifxLightPicker: LifxLightsTableViewController) {
+        lifxLightPicker.onLightSelection = { lifxLight in
+            self.saveLifxLight(lifxLight)
+            self.tableView.reloadData()
+            self.dismissLifxLightPicker()
+        }
+    }
+    
+    func saveLifxLight(lifxLight: LFXLight) {
+        let light = Light(friendlyName: lifxLight.label(), deviceID: lifxLight.deviceID)
+        SettingsPersistanceManager.addLight(light)
+    }
+    
+    func dismissLifxLightPicker() {
+        navigationController?.popViewControllerAnimated(true)
     }
 }

@@ -24,8 +24,8 @@
 		9C4E2F30198EBC87009175BE /* CircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4E2F2F198EBC87009175BE /* CircleCollectionViewCell.swift */; };
 		9C50083219BB62E7003F9B38 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50083119BB62E7003F9B38 /* TextFieldTableViewCell.swift */; };
 		9C50083419BB7286003F9B38 /* Backgrounds.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C50083319BB7286003F9B38 /* Backgrounds.xcassets */; };
-		9C50630C199408E000D21C2B /* LFXKSBKColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630B199408E000D21C2B /* LFXKSBKColorExtension.swift */; };
-		9C50630D1994255E00D21C2B /* LFXKSBKColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630B199408E000D21C2B /* LFXKSBKColorExtension.swift */; };
+		9C50630C199408E000D21C2B /* LFXHSBKColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630B199408E000D21C2B /* LFXHSBKColorExtension.swift */; };
+		9C50630D1994255E00D21C2B /* LFXHSBKColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630B199408E000D21C2B /* LFXHSBKColorExtension.swift */; };
 		9C50630F1994E3F100D21C2B /* SettingsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630E1994E3F100D21C2B /* SettingsPersistanceManager.swift */; };
 		9C5063141994E80A00D21C2B /* SettingsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50630E1994E3F100D21C2B /* SettingsPersistanceManager.swift */; };
 		9C77C886198FEAC200EC55B9 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CF448198FE4FA00BE6E3C /* ArrayExtension.swift */; };
@@ -95,7 +95,7 @@
 		9C4E2F2F198EBC87009175BE /* CircleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C50083119BB62E7003F9B38 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldTableViewCell.swift; path = Views/TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		9C50083319BB7286003F9B38 /* Backgrounds.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Backgrounds.xcassets; sourceTree = "<group>"; };
-		9C50630B199408E000D21C2B /* LFXKSBKColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFXKSBKColorExtension.swift; sourceTree = "<group>"; };
+		9C50630B199408E000D21C2B /* LFXHSBKColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFXHSBKColorExtension.swift; sourceTree = "<group>"; };
 		9C50630E1994E3F100D21C2B /* SettingsPersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPersistanceManager.swift; sourceTree = "<group>"; };
 		9C780E14198ECD3400FA4826 /* LightsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsTableViewController.swift; sourceTree = "<group>"; };
 		9C780E16198ECD4900FA4826 /* ColoursTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoursTableViewController.swift; sourceTree = "<group>"; };
@@ -236,7 +236,7 @@
 				9C3CF448198FE4FA00BE6E3C /* ArrayExtension.swift */,
 				9C2681AA19B84D8F00D70C45 /* UIColorExtension.swift */,
 				9CCA9ABC1993E8740059635F /* LFXLightExtension.swift */,
-				9C50630B199408E000D21C2B /* LFXKSBKColorExtension.swift */,
+				9C50630B199408E000D21C2B /* LFXHSBKColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -503,7 +503,7 @@
 				9C0A2DCF197F9ADE00D94B5F /* MainViewController.swift in Sources */,
 				9C0A2DCD197F9ADE00D94B5F /* AppDelegate.swift in Sources */,
 				9CCA9ABD1993E8740059635F /* LFXLightExtension.swift in Sources */,
-				9C50630C199408E000D21C2B /* LFXKSBKColorExtension.swift in Sources */,
+				9C50630C199408E000D21C2B /* LFXHSBKColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +514,7 @@
 				9C5063141994E80A00D21C2B /* SettingsPersistanceManager.swift in Sources */,
 				9C948C0619881CD40098E0BA /* ColourCollectionViewCell.swift in Sources */,
 				9CCA9ABE1993E8DF0059635F /* LFXLightExtension.swift in Sources */,
-				9C50630D1994255E00D21C2B /* LFXKSBKColorExtension.swift in Sources */,
+				9C50630D1994255E00D21C2B /* LFXHSBKColorExtension.swift in Sources */,
 				9C4E2F30198EBC87009175BE /* CircleCollectionViewCell.swift in Sources */,
 				9C0A2DF5197F9BA200D94B5F /* ExtensionViewController.swift in Sources */,
 				9C1CC8B4198995D300465CFE /* Light.swift in Sources */,

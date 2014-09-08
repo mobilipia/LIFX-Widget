@@ -9,7 +9,8 @@
 import UIKit
 
 var ColourTableViewCellIdentifier = "ColourTableViewCellIdentifier"
-var ColourViewControllerSegue = "ColourViewControllerSegue"
+var ColourPickerSegue = "ColourViewControllerSegue"
+var NewColourPickerSegue = "NewColourViewControllerSegue"
 
 class ColoursTableViewController : GenericTableViewController
 {
@@ -23,22 +24,13 @@ class ColoursTableViewController : GenericTableViewController
     // MARK: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        emptyImage = UIImage(named: "large-colour-wheel")
-        emptyTitle = "No colours configured"
-        emptyButtonTitle = "Add some by pressing the '+' button"
-        tintColor = UIColor(red: 5/CGFloat(255), green: 222/CGFloat(255), blue: 255/CGFloat(255), alpha: 1)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        // FIXME: This is crap
-        tableView.reloadData()
+        configureView()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == ColourViewControllerSegue) {
-            let colourViewController = segue.destinationViewController as ColourViewController
-            configureColourViewControllerWithSelectedColour(colourViewController)
+        if segue.identifier == ColourPickerSegue || segue.identifier == NewColourPickerSegue {
+            let colourPicker = segue.destinationViewController as ColourViewController
+            configureColourPickerWithSelectedColour(colourPicker)
         }
     }
     
@@ -75,6 +67,13 @@ class ColoursTableViewController : GenericTableViewController
     
 
     // MARK: Convenience methods
+    func configureView() {
+        emptyImage = UIImage(named: "large-colour-wheel")
+        emptyTitle = "No colours configured"
+        emptyButtonTitle = "Add some by pressing the '+' button"
+        tintColor = UIColor(red: 5/CGFloat(255), green: 222/CGFloat(255), blue: 255/CGFloat(255), alpha: 1)
+    }
+    
     func configureCell(cell: UITableViewCell, withColour colour: LFXHSBKColor) {
         cell.contentView.backgroundColor = colour.UIColor()
     }
@@ -84,14 +83,32 @@ class ColoursTableViewController : GenericTableViewController
         SettingsPersistanceManager.removeColour(colour)
     }
     
-    func configureColourViewControllerWithSelectedColour(colourViewController: ColourViewController) {
+    func configureColourPickerWithSelectedColour(colourPicker: ColourViewController) {
         if let selectedIndexPath = tableView.indexPathForSelectedRow() {
             let selectedColour = colours[selectedIndexPath.row]
-            colourViewController.colour = selectedColour
+            colourPicker.colour = selectedColour
+        }
+
+        colourPicker.onColourSelection = { initialColour, newColour in
+            self.saveColour(initialColour, newColour: newColour)
+            self.tableView.reloadData()
+            self.dismissColourPicker()
         }
     }
     
+    func saveColour(initialColour: LFXHSBKColor?, newColour: LFXHSBKColor) {
+        if let initialColour = initialColour {
+            SettingsPersistanceManager.updateColour(initialColour, withColour: newColour)
+        } else {
+            SettingsPersistanceManager.addColour(newColour)
+        }
+    }
+    
+    func dismissColourPicker() {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
     func displayColourPicker() {
-        performSegueWithIdentifier(ColourViewControllerSegue, sender: nil)
+        performSegueWithIdentifier(NewColourPickerSegue, sender: nil)
     }
 }
