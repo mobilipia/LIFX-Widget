@@ -85,6 +85,10 @@ NCWidgetProviding {
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if lights.isEmpty || colours.isEmpty {
+            return 0
+        }
+        
         let sectionObject = CollectionViewSection.fromRaw(section)!
 
         switch sectionObject {
@@ -144,8 +148,9 @@ NCWidgetProviding {
         let image = UIImage(named: "small-lightbulb")
         return image
     }
+    
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let titleString = "You havn't set up any lights yet 😢"
+        let titleString = "You havn't set up lights and colours 😢"
         let attributes = [
             NSForegroundColorAttributeName: UIColor.whiteColor(),
             NSFontAttributeName: UIFont.systemFontOfSize(15)
@@ -155,19 +160,23 @@ NCWidgetProviding {
         return title
     }
 
-    func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
-        let titleString = "Open companion app"
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let titleString = "Tap the light to get started !"
         let attributes = [
             NSForegroundColorAttributeName: UIColor.lightGrayColor(),
             NSFontAttributeName: UIFont.systemFontOfSize(13)
         ]
         
-        let buttonTitle = NSAttributedString(string: titleString, attributes: attributes)
-        return buttonTitle
+        let descriptionTitle = NSAttributedString(string: titleString, attributes: attributes)
+        return descriptionTitle
     }
     
-    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
+    func emptyDataSetDidTapView(scrollView: UIScrollView!) {
         openCompanionApp()
+    }
+    
+    func offsetForEmptyDataSet(scrollView: UIScrollView!) -> CGPoint {
+        return CGPoint(x: 0, y: 20)
     }
     
     
@@ -236,7 +245,7 @@ NCWidgetProviding {
     
     // MARK: Convenience methods - Updating UI informations
     func updateView() {
-        if (lights.isEmpty && colours.isEmpty) {
+        if (lights.isEmpty || colours.isEmpty) {
             collectionViewHeightConstraint.constant = kEmptyBulbsCollectionViewHeight
             toogleSwitch.hidden = true
         } else {
