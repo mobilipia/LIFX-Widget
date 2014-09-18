@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         SettingsPersistanceManager.initHardCodedColours()
         SettingsPersistanceManager.initHardCodedLights()
+        configureAppAppearance()
         return true
     }
 
@@ -43,6 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func configureAppAppearance() {
+        let application = UIApplication.sharedApplication()
+        application.statusBarStyle = .LightContent
+    }
 }
 

@@ -6,8 +6,6 @@
 	<string>LIFX Widget</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleLightContent</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
