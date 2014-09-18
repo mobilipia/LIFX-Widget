@@ -28,5 +28,5 @@ The companion app is used to configure the widget itself. It allows you to :
 
 Installation
 -----------
-LiFX Widget is currently `Waiting for review` on the App Store.  
+LIFX Widget is currently `Waiting for review` on the App Store.  
 You can build & install it yourself, but if you like it, please buy a copy 😘.
