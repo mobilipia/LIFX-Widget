@@ -1,7 +1,7 @@
-LiFX-Widget
+LIFX Widget
 ===========
 
-Manage your (awesome) [LiFX](http://www.lifx.co "LiFX's website") bulbs. Right from notification center.
+Manage your (awesome) [LIFX](http://www.lifx.co "LIFX's website") bulbs, right from notification center.
 Change their colours, turn them off an on, without having to open the main app.
 
 Thanks Apple for opening iOS 8 !
@@ -28,31 +28,5 @@ The companion app is used to configure the widget itself. It allows you to :
 
 Installation
 -----------
-As soon as iOS 8 will be officialy out, I'll distribue it through the App Store.
-
-However, for now, you'll have to clone the repo, install the dependency using [CocoaPods](http://cocoapods.org, "CocoaPods website") and build it (using Xcode 6) yourself.
-```bash
-$ gem install cocoapods # if it isn't already installed
-$ git clone https://github.com/DCMaxxx/LiFX-Widget.git
-$ cd LiFX-Widget/project
-$ pod install
-$ open "LiFX Widget.xcworkspace"
-```
-
-To enable data communication (displayed lights / colours) between the companion and the widget, you'll need to setup an App group. To do so, see [App extension programming guide](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensibilityPG.pdf, "App extension programming guide"), page 22. Name it `group.LiFXWidgetSharingDefaults`.
-**I'm having trouble with it though. See issues below**.
-
-Then, build and run the `LiFX Widget Companion` scheme, followed by the `LiFX Widget` one.
-
-Known issues & other stuff
------------
-The only known issue is that for now, **sharing data between the companion app and the widget doesn't work**. ie: the configuration of displayed lights and colours. Apple's new API are buggy.
-
-**Short story:**  
-You'll need to hardcode a list of colours and lights in `SettingsPersistanceManager.swift`, `initHardCodedLights()` and `initHardCodedColours()`. Modifications made in companion app aren't persistent.
-
-**Long story:**  
-Apple's new API are buggy, sharing data between apps doesn't work as expected. Sometimes, [the data isn't written to the shared `NSUserDefaults`](https://devforums.apple.com/message/1036434#1036434, "Apple dev forums").
-Sometimes, custom objects archived in `NSUserDefaults` can't be decoded. And so on.  
-In my case, when I archive my custom classes in the shared `NSUserDefaults` from the companion app, I can't unarchive it from the widget (and vice-versa), `NSKeyedUnarchiver.unarchiveObjectWithData()` crashes - the `NSData` is there, the keyed unarchiver just doesn't seem to understand it. Archiving and unarchiving in the same app works though...  
-`initHardCoded{Lights,Colours}()` archives your custom lights and colours when you run either app, so the later calls to `NSKeyUnarchiver.unarchiveObjectWithData()` will be able to unarchive the data - since it has been archived on app launch.
+LiFX Widget is currently `Waiting for review` on the App Store.
+You can build & install it yourself, but if you like it, please buy a copy 😘.
