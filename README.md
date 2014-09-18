@@ -1,7 +1,7 @@
 LIFX Widget
 ===========
 
-Manage your (awesome) [LIFX](http://www.lifx.co "LIFX's website") bulbs, right from notification center.
+Manage your (awesome) [LIFX](http://www.lifx.co "LIFX's website") bulbs, right from notification center.  
 Change their colours, turn them off an on, without having to open the main app.
 
 Thanks Apple for opening iOS 8 !
@@ -16,7 +16,7 @@ Widget
 -----------
 Simply press your light name, then pick a colour. Toogle the selected light using the bottom switch.
 
-A greyed out light name means that it couldn't be found on the network.
+A greyed out light name means that it couldn't be found on the network.  
 If the widget can't detect your light, make sure you're on the same wireless network and the light bulb isn't electrically switched off.
 
 Companion app
@@ -28,5 +28,5 @@ The companion app is used to configure the widget itself. It allows you to :
 
 Installation
 -----------
-LiFX Widget is currently `Waiting for review` on the App Store.
+LiFX Widget is currently `Waiting for review` on the App Store.  
 You can build & install it yourself, but if you like it, please buy a copy 😘.
