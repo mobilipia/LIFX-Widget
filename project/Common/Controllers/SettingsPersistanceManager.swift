@@ -27,9 +27,9 @@ class SettingsPersistanceManager {
         ** of NSKeyedUnarchiver.unarchiveObjectWithData().
         **
         ** Persistance also doesn't work using Swift's array
-        ** or dictionaries. I "fixed" that using NSArray and
-        ** NSDictionary instances until I figure out a solution
-        ** to get NSKeyedUnarchiver to work.
+        ** or dictionaries. I worked around that using NSArray
+        ** and NSDictionary instances until I figure out
+        ** a solution to get NSKeyedUnarchiver to work.
         */
 //        if let lightsData = userDefaults.objectForKey(NSUserDefaultsLightsKey()) as? NSData {
 //            if let lights = NSKeyedUnarchiver.unarchiveObjectWithData(lightsData) as? [Light] {

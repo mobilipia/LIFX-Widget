@@ -37,7 +37,7 @@ class Light : NSObject, Equatable, NSCoding {
         aCoder.encodeObject(deviceID, forKey: "deviceID")
     }
     
-    // FIXME: Remove these two methods (see FIXME in SettingsPersistanceManager.swift)
+    // FIXME: Remove these two methods (see FIXME in SettingsPersistanceManager.savedLights())
     convenience init(dictionary: NSDictionary) {
         let friendlyName = dictionary["friendlyName"] as String
         let deviceID = dictionary["deviceID"] as String

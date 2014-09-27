@@ -8,7 +8,12 @@
 
 import Foundation
 
-// FIXME: Understand why Swift's compiler yells at me if I uncomment NSCoding
+/*
+** NSCoding can't be added as an extension, since
+** init(coder: NSCoder) is a requiered initializer
+** However, conforming to the protocol with a convenience
+** initializer makes archiving and unarchiving possible
+*/
 extension LFXHSBKColor/*: NSCoding*/ {
     
     // MARK: NSCoding
