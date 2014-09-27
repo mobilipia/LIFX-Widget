@@ -19,18 +19,47 @@ class SettingsPersistanceManager {
     // MARK: Lights persistance
     class func savedLights() -> [Light] {
         let userDefaults = NSUserDefaults(suiteName: NSUserDefaultsSuiteName())
-        if let lightsData = userDefaults.objectForKey(NSUserDefaultsLightsKey()) as? NSData {
-            if let lights = NSKeyedUnarchiver.unarchiveObjectWithData(lightsData) as? [Light] {
-                return lights
+        
+        // FIXME: Replace the current archiving system with NSKeyedUnarchiver
+        /*
+        ** Archiving data in companion app and unarchiving it
+        ** in the widget (or vice versa) will result of a crash
+        ** of NSKeyedUnarchiver.unarchiveObjectWithData().
+        **
+        ** Persistance also doesn't work using Swift's array
+        ** or dictionaries. I "fixed" that using NSArray and
+        ** NSDictionary instances until I figure out a solution
+        ** to get NSKeyedUnarchiver to work.
+        */
+//        if let lightsData = userDefaults.objectForKey(NSUserDefaultsLightsKey()) as? NSData {
+//            if let lights = NSKeyedUnarchiver.unarchiveObjectWithData(lightsData) as? [Light] {
+//                return lights
+        
+        var lights: [Light] = []
+        if let lightsDictionaryArray = userDefaults.objectForKey(NSUserDefaultsLightsKey()) as? NSArray {
+            var lights: [Light] = []
+            for lightDictionary in lightsDictionaryArray {
+                let light = Light(dictionary: lightDictionary as NSDictionary)
+                lights.append(light)
             }
+            return lights
         }
         return []
     }
     
     class func saveLights(lights: [Light]) {
         let userDefaults = NSUserDefaults(suiteName: NSUserDefaultsSuiteName())
-        let lightsData = NSKeyedArchiver.archivedDataWithRootObject(lights)
-        userDefaults.setObject(lightsData, forKey: NSUserDefaultsLightsKey())
+
+        // FIXME: See SettingsPersistanceManager.savedLights()
+//        let lightsData = NSKeyedArchiver.archivedDataWithRootObject(lights)
+//        userDefaults.setObject(lightsData, forKey: NSUserDefaultsLightsKey())
+
+        var lightsDictionaryArray = NSMutableArray()
+        for light in lights {
+            let lightDictionary = light.toDictionary()
+            lightsDictionaryArray.addObject(lightDictionary)
+        }
+        userDefaults.setObject(lightsDictionaryArray, forKey: NSUserDefaultsLightsKey())
         userDefaults.synchronize()
     }
     
@@ -99,39 +128,5 @@ class SettingsPersistanceManager {
             colours[index] = newColour
             saveColours(colours)
         }
-    }
-    
-    
-    // FIXME: Remove these functions
-    /*
-    ** Archiving data in companion app and unarchiving it
-    ** in the widget (or vice versa) will result of a crash
-    ** of NSKeyedUnarchiver.unarchiveObjectWithData().
-    ** Temporary, lights and colours are hardcoded and
-    ** initHardCodedLights() / initHardCodedColours()
-    ** are being called each time you open the widget or companion app.
-    **
-    ** This way, the NSKeyedUnarchiver.unarchiveObjectWithData()
-    ** doesn't complain any more, since the data is archived and
-    ** unarchived within the same app.
-    */
-    class func initHardCodedLights() {
-        saveLights([
-            Light(friendlyName: "Bed room", deviceID: "Some identifer"),
-            Light(friendlyName: "Living room", deviceID: "Get it thought lifx-http"),
-            Light(friendlyName: "Office", deviceID: "GET /lights"),
-            Light(friendlyName: "Kitchen", deviceID: "I guess you got it..."),
-        ])
-    }
-    
-    class func initHardCodedColours() {
-        saveColours([
-            LFXHSBKColor(hue: 10, saturation: 1, brightness: 0.6),
-            LFXHSBKColor(hue: 50, saturation: 1, brightness: 0.6),
-            LFXHSBKColor(hue: 100, saturation: 1, brightness: 0.6),
-            LFXHSBKColor(hue: 150, saturation: 1, brightness: 0.6),
-            LFXHSBKColor(hue: 200, saturation: 1, brightness: 0.6),
-            LFXHSBKColor(hue: 0, saturation: 0, brightness: 0.6)
-        ])
     }
 }

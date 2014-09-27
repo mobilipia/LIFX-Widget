@@ -36,6 +36,18 @@ class Light : NSObject, Equatable, NSCoding {
         aCoder.encodeObject(friendlyName, forKey: "friendlyName")
         aCoder.encodeObject(deviceID, forKey: "deviceID")
     }
+    
+    // FIXME: Remove these two methods (see FIXME in SettingsPersistanceManager.swift)
+    convenience init(dictionary: NSDictionary) {
+        let friendlyName = dictionary["friendlyName"] as String
+        let deviceID = dictionary["deviceID"] as String
+        self.init(friendlyName: friendlyName, deviceID: deviceID)
+    }
+    
+    func toDictionary() -> NSDictionary {
+        return NSDictionary(objects: [ friendlyName, deviceID ],
+                            forKeys: [ "friendlyName", "deviceID" ])
+    }
 }
 
 // MARK: Equatable
