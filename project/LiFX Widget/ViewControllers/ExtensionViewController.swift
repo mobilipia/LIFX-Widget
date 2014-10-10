@@ -55,6 +55,26 @@ NCWidgetProviding {
         return nil
     }
     }
+    
+    // FIXME: Apple's SDK Bug
+    /*
+    ** On regular horizontal size classes, the notification center
+    ** has a constant width with left and right margins. For some
+    ** reason, the width of the collectionView is the same as the
+    ** screen's width, as if there were no margins.
+    */
+    var realCollectionViewWidth: CGFloat {
+        get {
+            switch (self.traitCollection.horizontalSizeClass, self.traitCollection.userInterfaceIdiom) {
+                case (.Regular, .Pad):
+                    return 592
+                case (.Regular, .Phone):
+                    return 399
+                default:
+                    return CGRectGetWidth(collectionView.bounds)
+            }
+        }
+    }
 
     
     // MARK: UIViewController
@@ -114,14 +134,14 @@ NCWidgetProviding {
         let flowLayout = collectionViewLayout as UICollectionViewFlowLayout
         let defaultInsets = flowLayout.sectionInset
 
-        let width = CGRectGetWidth(collectionView.bounds)
+        let width = realCollectionViewWidth;
         let cellWidth = flowLayout.itemSize.width
         let spacingWidth = flowLayout.minimumInteritemSpacing
         
         let numberOfCells = self.collectionView(collectionView, numberOfItemsInSection: section)
         let numberOfSpaces = numberOfCells - 1
         
-        var edgeInsets = (width - (cellWidth * CGFloat(numberOfCells) + spacingWidth * CGFloat(numberOfSpaces))) / 2.0
+        var edgeInsets = (width - (cellWidth * CGFloat(numberOfCells + 1) + spacingWidth * CGFloat(numberOfSpaces))) / 2.0
         edgeInsets = max(edgeInsets, 5)
         return UIEdgeInsetsMake(defaultInsets.top, edgeInsets, defaultInsets.bottom, edgeInsets)
     }
