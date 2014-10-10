@@ -92,6 +92,12 @@ class SettingsPersistanceManager {
     }
     
     
+    // MARK: Collections persistance
+    class func hasCollection(collection: LFXTaggedLightCollection) -> Bool {
+        return false
+    }
+    
+    
     // MARK: Colours persistance
     class func savedColours() -> [LFXHSBKColor] {
         let userDefaults = NSUserDefaults(suiteName: NSUserDefaultsSuiteName())

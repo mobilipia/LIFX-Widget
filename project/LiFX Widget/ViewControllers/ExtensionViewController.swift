@@ -65,7 +65,7 @@ NCWidgetProviding {
     */
     var realCollectionViewWidth: CGFloat {
         get {
-            switch (self.traitCollection.horizontalSizeClass, self.traitCollection.userInterfaceIdiom) {
+            switch (traitCollection.horizontalSizeClass, traitCollection.userInterfaceIdiom) {
                 case (.Regular, .Pad):
                     return 592
                 case (.Regular, .Phone):

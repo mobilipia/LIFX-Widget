@@ -34,6 +34,37 @@ DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
         }
     }
     
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if self.tableView(tableView, shouldDisplayCustomTitleHeaderViewForSection: section) == false {
+            return 0
+        }
+        
+        return 24
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if self.tableView(tableView, shouldDisplayCustomTitleHeaderViewForSection: section) == false {
+            return nil
+        }
+        
+        var titleLabel = UILabel()
+        titleLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        titleLabel.text = self.tableView(tableView, customTitleForHeaderInSection: section)
+        titleLabel.font = UIFont.systemFontOfSize(14)
+        
+        var headerView = UIView()
+        headerView.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.8)
+        headerView.addSubview(titleLabel)
+
+        let views: [NSObject: AnyObject] = ["titleLabel": titleLabel]
+        let hConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-[titleLabel]|", options: .allZeros, metrics: nil, views: views)
+        let vConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[titleLabel]|", options: .AlignAllCenterY, metrics: nil, views: views)
+        let constaints = hConstraints + vConstraints
+        headerView.addConstraints(constaints)
+
+        return headerView
+    }
+    
     
     // MARK: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
@@ -88,6 +119,10 @@ DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
         }
     }
     
+    func tableView(tableView: UITableView, customTitleForHeaderInSection section: Int) -> String? {
+        return nil
+    }
+    
     
     // MARK: Convenience methods
     func configureTableView() {
@@ -107,5 +142,16 @@ DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
             NSFontAttributeName: UIFont.systemFontOfSize(size),
             NSForegroundColorAttributeName: color
         ])
+    }
+    
+    func tableView(tableView: UITableView, shouldDisplayCustomTitleHeaderViewForSection section: Int) -> Bool {
+        let numberOfCells = self.tableView(tableView, numberOfRowsInSection: section)
+        let title = self.tableView(tableView, customTitleForHeaderInSection: section)
+        
+        if numberOfCells == 0 || title == nil {
+            return false
+        } else {
+            return true
+        }
     }
 }
