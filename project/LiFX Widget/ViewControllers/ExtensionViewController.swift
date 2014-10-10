@@ -142,7 +142,7 @@ NCWidgetProviding {
         let numberOfCells = self.collectionView(collectionView, numberOfItemsInSection: section)
         let numberOfSpaces = numberOfCells - 1
         
-        var edgeInsets = (width - (cellWidth * CGFloat(numberOfCells + 1) + spacingWidth * CGFloat(numberOfSpaces))) / 2.0
+        var edgeInsets = (width - (cellWidth * CGFloat(numberOfCells) + spacingWidth * CGFloat(numberOfSpaces))) / 2.0
         edgeInsets = max(edgeInsets, 5)
         return UIEdgeInsetsMake(defaultInsets.top, edgeInsets, defaultInsets.bottom, edgeInsets)
     }
