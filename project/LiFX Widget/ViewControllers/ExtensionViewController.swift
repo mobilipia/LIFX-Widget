@@ -36,6 +36,7 @@ class ExtensionViewController: UIViewController,
 UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout,
 DZNEmptyDataSetSource, DZNEmptyDataSetDelegate,
 LFXLightCollectionObserver, LFXLightObserver,
+LFXNetworkContextObserver,
 NCWidgetProviding {
     
     // MARK: Properties
@@ -87,7 +88,7 @@ NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureEmptyDataSet()
-        startMonitoringLights()
+        startMonitoringLightsAndCollections()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -214,6 +215,22 @@ NCWidgetProviding {
         }
     }
     
+
+    // MARK: LFXNetworkContextObserver
+    func networkContext(networkContext: LFXNetworkContext!, didAddTaggedLightCollection lifxCollection: LFXTaggedLightCollection!) {
+        if let collection = lightForLifxCollection(lifxCollection) {
+            collection.lifxCollection = lifxCollection
+            updateView()
+        }
+    }
+    
+    func networkContext(networkContext: LFXNetworkContext!, didRemoveTaggedLightCollection lifxCollection: LFXTaggedLightCollection!) {
+        if let collection = lightForLifxCollection(lifxCollection) {
+            collection.lifxCollection = nil
+            updateView()
+        }
+    }
+    
     
     //- MARK: LFXLightObserver
     func light(lifxLight: LFXLight!, didChangePowerState powerState: LFXPowerState)  {
@@ -237,12 +254,16 @@ NCWidgetProviding {
     
 
     // MARK: Convenience methods - Light related
-    func startMonitoringLights() {
+    func startMonitoringLightsAndCollections() {
         var context = LFXClient.sharedClient().localNetworkContext
+        context.addNetworkContextObserver(self)
+        for collection in context.taggedLightCollections as [LFXTaggedLightCollection] {
+            self.networkContext(context, didAddTaggedLightCollection: collection)
+        }
+        
         var lifxLights = context.allLightsCollection
         lifxLights.addLightCollectionObserver(self)
-    
-        for lifxLight in lifxLights.lights {
+        for lifxLight in lifxLights.lights as [LFXLight] {
             self.lightCollection(lifxLights, didAddLight: lifxLight as LFXLight)
         }
     }
@@ -253,9 +274,15 @@ NCWidgetProviding {
         }.firstObject()
     }
     
+    func lightForLifxCollection(lifxCollection: LFXTaggedLightCollection) -> Light? {
+        return lights.filter {
+            return $0.collectionTag == lifxCollection.tag
+        }.firstObject()
+    }
+    
     func updateSelectedLightState() {
         if let powerState = LFXPowerState.fromRaw(UInt(toogleSwitch.on)) {
-            selectedLight?.lifxLight?.setPowerState(powerState)
+            selectedLight?.target?.setPowerState(powerState)
         }
     }
     
@@ -279,12 +306,14 @@ NCWidgetProviding {
     
     func updateToogleFromSelectedLight() {
         if let currentLight = selectedLight {
-            if let lifxLight = currentLight.lifxLight {
-                switch lifxLight.powerState() {
+            if let lifxTarget = currentLight.target {
+                switch lifxTarget.fuzzyPowerState() {
                 case .On:
                     updateAvailableToogleWithStatus(isOn: true)
                 case .Off:
                     updateAvailableToogleWithStatus(isOn: false)
+                default:
+                    break
                 }
             } else {
                 updateUnavailableToogle()
@@ -332,7 +361,7 @@ NCWidgetProviding {
         if let selectedLight = selectedLight {
             selectedColourIndex = index
             let selectedColour = colours[index]
-            selectedLight.lifxLight?.setColor(selectedColour)
+            selectedLight.target?.setColor(selectedColour)
         }
     }
     

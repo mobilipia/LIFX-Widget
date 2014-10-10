@@ -101,7 +101,7 @@ LFXNetworkContextObserver
     
     // MARK: LFXLightCollectionObserver
     func lightCollection(lightCollection: LFXLightCollection!, didAddLight light: LFXLight!) {
-        if (SettingsPersistanceManager.hasLightForLifxLight(light) == false) {
+        if (SettingsPersistanceManager.hasLightForLifxTarget(light) == false) {
             lights.append(light)
             tableView.reloadData()
         }
@@ -115,7 +115,7 @@ LFXNetworkContextObserver
     
     // MARK: LFXNetworkContextObserver
     func networkContext(networkContext: LFXNetworkContext!, didAddTaggedLightCollection collection: LFXTaggedLightCollection!) {
-        if (SettingsPersistanceManager.hasCollection(collection) == false) {
+        if (SettingsPersistanceManager.hasLightForLifxTarget(collection) == false) {
             collections.append(collection)
             tableView.reloadData()
         }

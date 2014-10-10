@@ -84,17 +84,19 @@ class SettingsPersistanceManager {
         }
     }
     
-    class func hasLightForLifxLight(lifxLight: LFXLight) -> Bool {
-        let matchingLight = savedLights().filter {
-            $0.deviceID == lifxLight.deviceID
-        }.firstObject()
-        return (matchingLight != nil)
-    }
-    
-    
-    // MARK: Collections persistance
-    class func hasCollection(collection: LFXTaggedLightCollection) -> Bool {
-        return false
+    class func hasLightForLifxTarget(lifxTarget: LFXLightTarget) -> Bool {
+        var matchingTarget: Light?
+        if let lifxLight = lifxTarget as? LFXLight {
+            matchingTarget = savedLights().filter {
+                $0.deviceID == lifxLight.deviceID
+            }.firstObject()
+        }
+        if let lifxCollection = lifxTarget as? LFXTaggedLightCollection {
+            matchingTarget = savedLights().filter {
+                $0.collectionTag == lifxCollection.tag
+            }.firstObject()
+        }
+        return (matchingTarget != nil)
     }
     
     

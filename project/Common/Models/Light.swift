@@ -11,11 +11,17 @@ import Foundation
 class Light : NSObject, Equatable, NSCoding {
     // MARK: Properties
     var friendlyName: String
-    var deviceID: String
-    var lifxLight: LFXLight?
+    var deviceID: String?
+    var collectionTag: String?
 
+    var lifxLight: LFXLight?
+    var lifxCollection: LFXTaggedLightCollection?
+    
+    var target: LFXLightTarget? {
+        return lifxLight ?? lifxCollection
+    }
     var isAvailable: Bool {
-        return (lifxLight != nil)
+        return (target != nil)
     }
     
     // MARK: Init
@@ -25,28 +31,52 @@ class Light : NSObject, Equatable, NSCoding {
         super.init()
     }
     
+    init(friendlyName: String, collectionTag: String) {
+        self.friendlyName = friendlyName
+        self.collectionTag = collectionTag
+        super.init()
+    }
+    
     // MARK: NSCoding
     required init(coder aDecoder: NSCoder) {
         friendlyName = aDecoder.decodeObjectForKey("friendlyName") as String
-        deviceID = aDecoder.decodeObjectForKey("deviceID") as String
+        deviceID = aDecoder.decodeObjectForKey("deviceID") as String?
+        collectionTag = aDecoder.decodeObjectForKey("collectionTag") as String?
         super.init()
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(friendlyName, forKey: "friendlyName")
-        aCoder.encodeObject(deviceID, forKey: "deviceID")
+        if let deviceID = deviceID {
+            aCoder.encodeObject(deviceID, forKey: "deviceID")
+        }
+        if let collectionTag = collectionTag {
+            aCoder.encodeObject(collectionTag, forKey: "collectionTag")
+        }
     }
     
     // FIXME: Remove these two methods (see FIXME in SettingsPersistanceManager.savedLights())
     convenience init(dictionary: NSDictionary) {
         let friendlyName = dictionary["friendlyName"] as String
-        let deviceID = dictionary["deviceID"] as String
-        self.init(friendlyName: friendlyName, deviceID: deviceID)
+        if let deviceID = dictionary["deviceID"] as? String {
+            self.init(friendlyName: friendlyName, deviceID: deviceID)
+        } else if let collectionTag =  dictionary["collectionTag"] as? String {
+            self.init(friendlyName: friendlyName, collectionTag: collectionTag)
+        } else {
+            self.init(friendlyName: friendlyName, deviceID: "unknownDevice")
+        }
     }
     
     func toDictionary() -> NSDictionary {
-        return NSDictionary(objects: [ friendlyName, deviceID ],
-                            forKeys: [ "friendlyName", "deviceID" ])
+        if let deviceID = deviceID {
+            return NSDictionary(objects: [ friendlyName, deviceID ],
+                                forKeys: [ "friendlyName", "deviceID" ])
+        }
+        if let collectionTag = collectionTag {
+            return NSDictionary(objects: [friendlyName, collectionTag ],
+                                forKeys: ["friendlyName", "collectionTag" ])
+        }
+        return NSDictionary()
     }
 }
 

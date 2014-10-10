@@ -8,7 +8,7 @@
 
 import UIKit
 
-let LightsTableViewCellIdentifier = "LightTableViewCell"
+let LifxTargetTableViewCellIdentifier = "LifxTargetTableViewCell"
 let LightViewControllerSegue = "LightViewControllerSegue"
 let LifxLightPickerSegue = "LifxLightViewControllerSegue"
 
@@ -62,7 +62,7 @@ UITextFieldDelegate
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(LightsTableViewCellIdentifier, forIndexPath: indexPath) as TextFieldTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(LifxTargetTableViewCellIdentifier, forIndexPath: indexPath) as LifxTargetTableViewCell
         let light = lights[indexPath.row]
         cell.configureWithLight(light)
         return cell
@@ -138,10 +138,20 @@ UITextFieldDelegate
             self.tableView.reloadData()
             self.dismissLifxLightPicker()
         }
+        lifxLightPicker.onCollectionSelection = { lifxCollection in
+            self.saveLifxCollection(lifxCollection)
+            self.tableView.reloadData()
+            self.dismissLifxLightPicker()
+        }
     }
     
     func saveLifxLight(lifxLight: LFXLight) {
         let light = Light(friendlyName: lifxLight.label(), deviceID: lifxLight.deviceID)
+        SettingsPersistanceManager.addLight(light)
+    }
+    
+    func saveLifxCollection(lifxCollection: LFXTaggedLightCollection) {
+        let light = Light(friendlyName: lifxCollection.tag, collectionTag: lifxCollection.tag)
         SettingsPersistanceManager.addLight(light)
     }
     

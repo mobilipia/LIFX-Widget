@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9DV-dr-2OO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A386a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9DV-dr-2OO">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -95,12 +95,12 @@
         <scene sceneID="N1T-AU-6yP">
             <objects>
                 <tableViewController id="EWp-JX-Rt8" customClass="LifxLightsTableViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xNl-Ne-WiI">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" id="xNl-Ne-WiI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LifxLightTableViewCell" textLabel="fP0-9b-zqn" rowHeight="55" style="IBUITableViewCellStyleDefault" id="Ac9-Qe-9n6">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LifxLightTableViewCell" textLabel="fP0-9b-zqn" rowHeight="54" style="IBUITableViewCellStyleDefault" id="Ac9-Qe-9n6">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ac9-Qe-9n6" id="Xtc-PX-fPL">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -158,29 +158,43 @@ The real name of your light won't be updated.</string>
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LightTableViewCell" rowHeight="55" id="a47-06-bUe" customClass="TextFieldTableViewCell" customModule="LiFX_Widget_Companion" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LifxTargetTableViewCell" rowHeight="55" id="a47-06-bUe" customClass="LifxTargetTableViewCell" customModule="LiFX_Widget_Companion" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a47-06-bUe" id="0S5-1M-8hZ">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Light" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j0l-Ge-8t6">
-                                            <rect key="frame" x="23" y="8" width="469" height="38"/>
+                                            <rect key="frame" x="23" y="8" width="484" height="38"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                             <connections>
                                                 <outlet property="delegate" destination="vmH-PE-SKQ" id="Yj1-qU-MN6"/>
                                             </connections>
                                         </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFG-kb-JIq">
+                                            <rect key="frame" x="527" y="14" width="60" height="25"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="3Uf-Cm-4fq"/>
+                                                <constraint firstAttribute="width" constant="60" id="lyd-7s-WGG"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="HFG-kb-JIq" firstAttribute="leading" secondItem="j0l-Ge-8t6" secondAttribute="trailing" constant="20" id="1s4-hW-pEH"/>
                                         <constraint firstItem="j0l-Ge-8t6" firstAttribute="leading" secondItem="0S5-1M-8hZ" secondAttribute="leadingMargin" constant="15" id="7rp-ZG-6Ad"/>
-                                        <constraint firstItem="j0l-Ge-8t6" firstAttribute="trailing" secondItem="0S5-1M-8hZ" secondAttribute="trailingMargin" constant="-100" id="G74-2l-JbT"/>
+                                        <constraint firstAttribute="centerY" secondItem="HFG-kb-JIq" secondAttribute="centerY" constant="0.5" id="LdF-oD-Rrz"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="j0l-Ge-8t6" secondAttribute="bottom" id="o7P-74-apm"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="HFG-kb-JIq" secondAttribute="trailing" constant="5" id="rnT-hg-qku"/>
                                         <constraint firstItem="j0l-Ge-8t6" firstAttribute="top" secondItem="0S5-1M-8hZ" secondAttribute="topMargin" id="rqg-Nu-nSM"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="textField" destination="j0l-Ge-8t6" id="Fvp-h1-dAq"/>
+                                    <outlet property="typeLabel" destination="HFG-kb-JIq" id="Cxj-BJ-LmB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
