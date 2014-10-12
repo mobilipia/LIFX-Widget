@@ -680,7 +680,7 @@
 		};
 		9C0A2DFE197F9BA200D94B5F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 547A50B421BBEEB84E104CB1 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 6E42C777B854ACD3AB3EA408 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_ENTITLEMENTS = "LiFX Widget/com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements";

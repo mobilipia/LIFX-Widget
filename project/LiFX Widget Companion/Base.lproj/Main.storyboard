@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A386a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9DV-dr-2OO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9DV-dr-2OO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -140,10 +140,11 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlV-gU-01r">
-                                    <rect key="frame" x="31" y="34" width="539" height="67"/>
+                                    <rect key="frame" x="31" y="26" width="539" height="84"/>
                                     <string key="text">Since widget are displayed in a small area, you can nickname a light by pressing its label.
+The real name of your light won't be updated.
 
-The real name of your light won't be updated.</string>
+Long press a cell's type to reorder it</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>

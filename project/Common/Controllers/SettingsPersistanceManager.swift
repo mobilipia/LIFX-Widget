@@ -84,6 +84,14 @@ class SettingsPersistanceManager {
         }
     }
     
+    class func moveLightAtIndex(oldIndex: Int, toIndex newIndex: Int) {
+        var lights = savedLights()
+        let lightToMove = lights[oldIndex]
+        lights.removeAtIndex(oldIndex)
+        lights.insert(lightToMove, atIndex: newIndex)
+        saveLights(lights)
+    }
+    
     class func hasLightForLifxTarget(lifxTarget: LFXLightTarget) -> Bool {
         var matchingTarget: Light?
         if let lifxLight = lifxTarget as? LFXLight {
