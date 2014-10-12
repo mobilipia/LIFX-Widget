@@ -26,11 +26,5 @@ The companion app is used to configure the widget itself. It allows you to :
 
 Installation
 -----------
-Unfortunately, Apple doesn't seem to let me publish it on the store.  
-It has been rejected twice : the first time because, as they couldn't test the app, they wanted a demo video. Fair enough, I sent them the video, resubmit.  
-Twelve days later, it is rejected again. Reason : they can't test it. They want me to send a LIFX bulb to them, for testing. However, I don't really feel like sending them a $100 bulb just for an app validation, so I guess it'll stay on Github.
-
-To install it, you'll need a paid developper account. Follow [the 5th of this tutorial step](http://www.glimsoft.com/06/28/ios-8-today-extension-tutorial/) to configure an app group and enable sharing data between the companion app and the widget.
-Then, just build and run the companion scheme on your device. Kill it, then build and run the widget scheme. You should be good to go.
-
-I'd love to make this process simpler - and allow you to install it without a paid account - however, Apple doesn't seem to agree. :sadpanda:.
+Here you go : [App store link](https://itunes.apple.com/ca/app/lifx-widget/id920453360?mt=8&ign-mpt=uo%3D2).  
+You can build and install it yourself, but if you like it, please buy a copy 😘
