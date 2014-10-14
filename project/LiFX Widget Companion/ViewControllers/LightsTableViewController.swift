@@ -45,14 +45,14 @@ UITextFieldDelegate
     }
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        saveLightAndDismissKeyboard()
+        textField.resignFirstResponder()
         return true
     }
     
-    
-    // MARK: UIScrollView
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
         saveLightAndDismissKeyboard()
+        displayedTextField = nil
+        return true
     }
     
     
