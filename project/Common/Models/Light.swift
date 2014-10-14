@@ -82,6 +82,12 @@ class Light : NSObject, Equatable, NSCoding {
 
 // MARK: Equatable
 func == (lhs: Light, rhs: Light) -> Bool {
-    return lhs.deviceID == rhs.deviceID
+    if lhs.deviceID != nil {
+        return lhs.deviceID == rhs.deviceID
+    } else if lhs.collectionTag != nil {
+        return lhs.collectionTag == rhs.collectionTag
+    } else {
+        return lhs.friendlyName == rhs.friendlyName
+    }
 }
 
