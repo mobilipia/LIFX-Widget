@@ -21,14 +21,13 @@ UITextFieldDelegate
     return SettingsPersistanceManager.savedLights()
     }
     var displayedTextField: UITextField?
-    var originalRightBarButtonItem: UIBarButtonItem?
+    override var allowsEdition: Bool { return true }
     
     
     // MARK: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        addLongPressToReorder()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -40,6 +39,13 @@ UITextFieldDelegate
 
     
     // MARK: UITextFieldDelegate
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        if tableView.editing {
+            return false
+        } else {
+            return true
+        }
+    }
     func textFieldDidBeginEditing(textField: UITextField) {
         displayedTextField = textField
     }
@@ -68,26 +74,6 @@ UITextFieldDelegate
         return cell
     }
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    
-    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        if tableView.editing {
-            return .None
-        } else {
-            return .Delete
-        }
-    }
-    
-    override func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-    
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    
     override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
         let oldIndex = sourceIndexPath.row
         let newIndex = destinationIndexPath.row
@@ -114,21 +100,6 @@ UITextFieldDelegate
         saveLightAndDismissKeyboard()
     }
     
-    func longPressedView(gestureRecognizer: UILongPressGestureRecognizer) {
-        if gestureRecognizer.state == .Began {
-            tableView.setEditing(true, animated: true)            
-            originalRightBarButtonItem = navigationItem.rightBarButtonItem
-            let newButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action:Selector("pressedDoneButtonItem"))
-            navigationItem.rightBarButtonItem = newButton
-        }
-    }
-    
-    func pressedDoneButtonItem() {
-        tableView.setEditing(false, animated: true)
-        navigationItem.rightBarButtonItem = originalRightBarButtonItem
-        originalRightBarButtonItem = nil
-    }
-    
     
     // MARK: Convenience methods
     func configureView() {
@@ -136,12 +107,6 @@ UITextFieldDelegate
         emptyTitle = "No lights configured"
         emptyButtonTitle = "Add some by pressing the '+' button"
         tintColor = UIColor(red: 244/CGFloat(255), green: 144/CGFloat(255), blue: 255/CGFloat(255), alpha: 1)
-    }
-    
-    func addLongPressToReorder() {
-        let longPressRecognizer = UILongPressGestureRecognizer()
-        longPressRecognizer.addTarget(self, action: Selector("longPressedView:"))
-        tableView.addGestureRecognizer(longPressRecognizer)
     }
     
     func removeLightAtIndexPath(indexPath: NSIndexPath) {

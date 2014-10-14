@@ -86,9 +86,7 @@ class SettingsPersistanceManager {
     
     class func moveLightAtIndex(oldIndex: Int, toIndex newIndex: Int) {
         var lights = savedLights()
-        let lightToMove = lights[oldIndex]
-        lights.removeAtIndex(oldIndex)
-        lights.insert(lightToMove, atIndex: newIndex)
+        lights.moveObjectAtIndex(oldIndex, toIndex: newIndex)
         saveLights(lights)
     }
     
@@ -144,5 +142,11 @@ class SettingsPersistanceManager {
             colours[index] = newColour
             saveColours(colours)
         }
+    }
+    
+    class func moveColourAtIndex(oldIndex: Int, toIndex newIndex: Int) {
+        var colours = savedColours()
+        colours.moveObjectAtIndex(oldIndex, toIndex: newIndex)
+        saveColours(colours)
     }
 }

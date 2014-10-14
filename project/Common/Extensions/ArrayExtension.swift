@@ -27,5 +27,11 @@ extension Array {
             }
         }
     }
+    
+    mutating func moveObjectAtIndex(oldIndex: Int, toIndex newIndex: Int) {
+        let objectToMove = self[oldIndex]
+        self.removeAtIndex(oldIndex)
+        self.insert(objectToMove, atIndex: newIndex)
+    }
 
 }

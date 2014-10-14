@@ -18,6 +18,9 @@ DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
     var emptyDescription: String?
     var emptyButtonTitle: String?
     var tintColor: UIColor?
+
+    var allowsEdition: Bool { return false }
+    var originalRightBarButtonItem: UIBarButtonItem?
     
     
     // MARK: UIViewController
@@ -25,6 +28,9 @@ DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
         super.viewDidLoad()
         configureTableView()
         configureEmptyDataSet()
+        if (allowsEdition) {
+            addLongPressToReorder()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -63,6 +69,30 @@ DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
         headerView.addConstraints(constaints)
 
         return headerView
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return allowsEdition
+    }
+
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return allowsEdition
+    }
+
+    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        if allowsEdition {
+            if tableView.editing {
+                return .None
+            } else {
+                return .Delete
+            }
+        } else {
+            return .None
+        }
+    }
+    
+    override func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
     }
     
     
@@ -110,6 +140,24 @@ DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
         return CGPointZero
     }
     
+    
+    // MARK: User interactions
+    func longPressedView(gestureRecognizer: UILongPressGestureRecognizer) {
+        if gestureRecognizer.state == .Began {
+            tableView.setEditing(true, animated: true)
+            originalRightBarButtonItem = navigationItem.rightBarButtonItem
+            let newButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action:Selector("pressedDoneButtonItem"))
+            navigationItem.rightBarButtonItem = newButton
+        }
+    }
+    
+    func pressedDoneButtonItem() {
+        tableView.setEditing(false, animated: true)
+        navigationItem.rightBarButtonItem = originalRightBarButtonItem
+        originalRightBarButtonItem = nil
+    }
+    
+    
     // MARK: Public methods
     func configureNavigationBarColor(navigationBarColor: UIColor, buttonsColor: UIColor) {
         if let navigationBar = navigationController?.navigationBar {
@@ -135,6 +183,12 @@ DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
     func configureEmptyDataSet() {
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
+    }
+    
+    func addLongPressToReorder() {
+        let longPressRecognizer = UILongPressGestureRecognizer()
+        longPressRecognizer.addTarget(self, action: Selector("longPressedView:"))
+        tableView.addGestureRecognizer(longPressRecognizer)
     }
     
     func attributedStringWithTitle(title: String, size: CGFloat, color: UIColor) -> NSAttributedString {

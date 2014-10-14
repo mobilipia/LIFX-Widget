@@ -19,6 +19,7 @@ class ColoursTableViewController : GenericTableViewController
     var colours: [LFXHSBKColor] {
         return SettingsPersistanceManager.savedColours()
     }
+    override var allowsEdition: Bool { return true }
     
 
     // MARK: UIViewController
@@ -47,10 +48,6 @@ class ColoursTableViewController : GenericTableViewController
         return cell
     }
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             removeColourAtIndexPath(indexPath)
@@ -59,6 +56,11 @@ class ColoursTableViewController : GenericTableViewController
         }
     }
     
+    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        let oldIndex = sourceIndexPath.row
+        let newIndex = destinationIndexPath.row
+        SettingsPersistanceManager.moveColourAtIndex(oldIndex, toIndex: newIndex)
+    }
     
     // MARK: DZNEmptyDataSetDelegate
     func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
@@ -75,7 +77,7 @@ class ColoursTableViewController : GenericTableViewController
     }
     
     func configureCell(cell: UITableViewCell, withColour colour: LFXHSBKColor) {
-        cell.contentView.backgroundColor = colour.UIColor()
+        cell.backgroundColor = colour.UIColor()
     }
     
     func removeColourAtIndexPath(indexPath: NSIndexPath) {
