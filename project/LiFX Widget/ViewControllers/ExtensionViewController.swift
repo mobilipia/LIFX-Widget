@@ -295,6 +295,7 @@ NCWidgetProviding {
         } else {
             updateCollectionViewHeight()
             toogleSwitch.hidden = false
+            selectFirstLightIfNeeded()
             updateToogleFromSelectedLight()
         }
         collectionView.reloadData()
@@ -302,6 +303,15 @@ NCWidgetProviding {
     
     func updateCollectionViewHeight() {
         collectionViewHeightConstraint.constant = collectionView.contentSize.height
+    }
+    
+    func selectFirstLightIfNeeded() {
+        let hasOnlyOneLight = (lights.count == 1)
+        let isFirstLightAvailable = (lights.firstObject()?.isAvailable)
+        let shouldSelectFirstLight = (hasOnlyOneLight && isFirstLightAvailable? != nil && isFirstLightAvailable! == true)
+        if shouldSelectFirstLight {
+            selectedLightIndex = 0
+        }
     }
     
     func updateToogleFromSelectedLight() {
