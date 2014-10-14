@@ -168,7 +168,7 @@ NCWidgetProviding {
     }
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let titleString = "You havn't set up lights and colours 😢"
+        let titleString = "You haven't set up lights and colours 😢"
         let attributes = [
             NSForegroundColorAttributeName: UIColor.whiteColor(),
             NSFontAttributeName: UIFont.systemFontOfSize(15)
