@@ -4,4 +4,7 @@
 
 #import <LIFXKit.h>
 #import <HRColorPickerView.h>
+#import <HRColorMapView.h>
+#import <HRBrightnessSlider.h>
+
 #import <UIScrollView+EmptyDataSet.h>

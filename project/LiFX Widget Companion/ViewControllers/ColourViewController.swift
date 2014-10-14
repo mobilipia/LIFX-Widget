@@ -35,6 +35,10 @@ class ColourViewController : UIViewController {
     // MARK: Convenience methods
     func configureColorPickerView() {
         colorPickerView.color = colour?.UIColor() ?? UIColor.randomColor()
+
+        // HACK: For some reason, Swift only recognizes it as a UIControl
+        let colorMapView = colorPickerView.colorMapView as HRColorMapView
+        colorMapView.saturationUpperLimit? = 1
     }
     
 }
